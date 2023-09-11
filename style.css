@@ -1,6 +1,7 @@
 /* display background color black on navbar scroll */
+
 .navbarScroll.navbarDark {
-    background-color: #008000;
+    background-color: black;
 }
 /* hero background image */
 .bgimage {
