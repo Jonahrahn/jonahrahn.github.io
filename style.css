@@ -43,3 +43,7 @@
 .navbarScroll.navbarDark {
     background-color: black;
 }
+/* about section image css */
+.imageAboutPage {
+    width: 100%;
+}
