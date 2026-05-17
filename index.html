@@ -1,253 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <title>JONAH RAHN — ENGINEERING LINGUIST</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jonah Rahn. Engineering Linguist. Portfolio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  <head>
-    <title>Jonah Rahn Portfolio</title>
+  <header class="nav" id="top">
+    <a class="nav__brand" href="#top">[ J.R. ]</a>
+    <nav class="nav__links">
+      <a href="#about">01 / ABOUT</a>
+      <a href="#services">02 / WORK</a>
+      <a href="#portfolio">03 / INDEX</a>
+      <a href="#contact">04 / CONTACT</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">MENU +</button>
+  </header>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- linking css file -->
-    <link rel="stylesheet" href="style.css">
-  <!-- bootstrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-expand-lg fixed-top navbarScroll">
-      <div class="container">
-          <a class="navbar-brand" href="#">Jonah</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto">
-                  <li class="nav-item active">
-                      <a class="nav-link" href="#home">Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#about">About</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#services">Services</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#portfolio">Portfolio</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#contact">Contact</a>
-                  </li>
-              </ul>
-              
-          </div>
+  <section class="hero" id="home">
+    <div class="hero__meta">
+      <span>N 36.97°</span>
+      <span>W 122.03°</span>
+      <span>SANTA CRUZ / CA</span>
+    </div>
+    <h1 class="hero__title">
+      JONAH<br>
+      RAHN<span class="hero__title-dot">.</span>
+    </h1>
+    <div class="hero__footer">
+      <p class="hero__role">ENGINEERING&nbsp;&mdash;&nbsp;LINGUIST</p>
+      <p class="hero__year">MMXXVI</p>
+    </div>
+    <div class="hero__scroll">SCROLL ↓</div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section__head">
+      <span class="section__num">§ 01</span>
+      <h2 class="section__title">ABOUT</h2>
+      <span class="section__rule"></span>
+    </div>
+    <div class="about">
+      <figure class="about__figure">
+        <img src="images/about.jpeg" alt="Portrait of Jonah Rahn">
+        <figcaption>FIG. 01 — J. RAHN, OPERATOR</figcaption>
+      </figure>
+      <div class="about__body">
+        <p class="about__lead">
+          A passionate engineering linguist unraveling the mysteries of human
+          language &amp; applying that knowledge to cutting-edge technology.
+        </p>
+        <p>
+          From a Linguistics B.A. at the University of California, Santa Cruz
+          to optimizing ML models at LinkedIn — I bridge the gap between human
+          communication and machine intelligence.
+        </p>
+        <dl class="about__data">
+          <div><dt>COMPANY</dt><dd>LinkedIn</dd></div>
+          <div><dt>ROLE</dt><dd>Engineering Linguist</dd></div>
+          <div><dt>FOCUS</dt><dd>ML model optimization &amp; data cleaning</dd></div>
+          <div><dt>BASED</dt><dd>Santa Cruz, CA</dd></div>
+        </dl>
       </div>
-  </nav>
-   <!-- main banner -->
-  <section class="bgimage" id="home">
-        <div class="container-fluid">
-            <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
-            <h2 class="hero_title">Jonah Rahn</h2>
-            <p class="hero_desc">Engineering Linguist</Area></p>
-        </div>
-        </div>
     </div>
   </section>
-    
-    <!-- about section-->
- <section id="about">
-     <div class="container mt-4 pt-4">
-       <h1 class="text-center">About Me</h1>
-            <div class="row mt-4">
-                <div class="col-lg-4">
-                    <img src="images/about.jpeg" class= "imageAboutPage" alt="">
-                </div>
-              
-          <div class="col-lg-8">
-              <p> I am a passionate Engineering Linguist with a deep love for unraveling the mysteries of human language and applying that knowledge to cutting-edge technology. 
-                My journey from a Linguistics B.A. at the University of California, Santa Cruz to hands-on experience optimizing ML models at LinkedIn has honed my skills in Data Analysis, Linguistics, and Artificial Intelligence. 
-                I thrive on the challenge of bridging the gap between human communication and machine intelligence, using my expertise to enhance linguistic experiences in the digital world.
-                
-              </p>
-              <div class="row mt-3">
-                  <div class="col-md-6">
-                      <ul>
-                          <li>Company: Linkedin</li>
-                          <li>Role: Engineering Linguist</li>
-                          <li>Description: Optimize machine learning model using data cleaning procedure</li>
 
-                      </ul>
-                  </div>
-                  <div class="social-icons mt-5">
-                    
-                    <a href="https://github.com/Jonahrahn" target="_blank"><i class="fab fa-github-square"></i></a>
-                    <a href="https://www.linkedin.com/in/jonah-rahn/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.upwork.com/freelancers/~0182af44d0369b6f1e/" target="_blank"><i class="fas fa-envelope"></i></a>
-                    <a href="https://github.com/Jonahrahn/Jonahrahn" target="_blank"><i class="fas fa-book"></i></a>
-                  </div>
-              </div>
-          </div>
+  <section class="section section--alt" id="services">
+    <div class="section__head">
+      <span class="section__num">§ 02</span>
+      <h2 class="section__title">WORK / STACK</h2>
+      <span class="section__rule"></span>
+    </div>
+    <div class="services">
+      <article class="service">
+        <header class="service__head">
+          <span class="service__num">001</span>
+          <h3>DATA<br>ANALYSIS</h3>
+        </header>
+        <p>Python · SQL · JavaScript · R · HTML · AWS · Tableau · Spark · Google Suite/Colab · Flask · CSS · Big Data Processing · Google Dialogflow · JSON.</p>
+      </article>
+      <article class="service">
+        <header class="service__head">
+          <span class="service__num">002</span>
+          <h3>LINGUISTIC<br>DESIGN</h3>
+        </header>
+        <p>Syntax · Python · Language Data Processing · Computational Linguistics · Phonetics (Praat) · Semantics · Translation · Phonology · Annotation.</p>
+      </article>
+      <article class="service">
+        <header class="service__head">
+          <span class="service__num">003</span>
+          <h3>ARTIFICIAL<br>INTELLIGENCE</h3>
+        </header>
+        <p>TensorFlow · Keras · Neural Networks · Machine Learning · Natural Language Processing · Deep Learning · Reinforcement Learning · PyTorch.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="portfolio">
+    <div class="section__head">
+      <span class="section__num">§ 03</span>
+      <h2 class="section__title">INDEX / WORKS</h2>
+      <span class="section__rule"></span>
+    </div>
+    <ul class="works">
+      <li class="work">
+        <a href="https://github.com/Jonahrahn/Mental_Health_Predictor" target="_blank" rel="noopener">
+          <span class="work__num">01</span>
+          <span class="work__title">ML HEALTH RISK PREDICTOR</span>
+          <span class="work__tag">[ ML · PYTHON ]</span>
+          <span class="work__arrow">↗</span>
+        </a>
+        <p class="work__desc">Machine learning model predicting mental health risk factors. Data preprocessing, feature engineering, model selection, evaluation.</p>
+        <div class="work__image"><img src="images/portfolioImage1.jpg" alt=""></div>
+      </li>
+      <li class="work">
+        <a href="https://github.com/Jonahrahn/Neural_Network_Charity_Analysis" target="_blank" rel="noopener">
+          <span class="work__num">02</span>
+          <span class="work__title">NEURAL NETWORK CHARITY ANALYSIS</span>
+          <span class="work__tag">[ TENSORFLOW · KERAS ]</span>
+          <span class="work__arrow">↗</span>
+        </a>
+        <p class="work__desc">Neural network model analyzing the success rates of charity campaigns. Built with TensorFlow + Keras.</p>
+        <div class="work__image"><img src="images/portfolioImage2.jpg" alt=""></div>
+      </li>
+      <li class="work">
+        <a href="https://github.com/Jonahrahn/BikeSharing" target="_blank" rel="noopener">
+          <span class="work__num">03</span>
+          <span class="work__title">CITI BIKE TABLEAU VISUALIZATION</span>
+          <span class="work__tag">[ TABLEAU · DATA VIZ ]</span>
+          <span class="work__arrow">↗</span>
+        </a>
+        <p class="work__desc">Interactive Tableau visualization exploring Citi Bike data for insights into user behavior and usage patterns.</p>
+        <div class="work__image"><img src="images/portfolioImage3.jpg" alt=""></div>
+      </li>
+      <li class="work">
+        <a href="https://github.com/Jonahrahn/Mission-to-Mars" target="_blank" rel="noopener">
+          <span class="work__num">04</span>
+          <span class="work__title">MISSION TO MARS</span>
+          <span class="work__tag">[ PYTHON · FLASK · MONGO ]</span>
+          <span class="work__arrow">↗</span>
+        </a>
+        <p class="work__desc">Python, Splinter, Flask, Mongo &amp; Beautiful Soup. A webpage that aggregates scraped data from multiple sites.</p>
+        <div class="work__image"><img src="images/portfolioImage4.jpg" alt=""></div>
+      </li>
+      <li class="work">
+        <a href="https://github.com/Jonahrahn/Amazon_Vine_Analysis" target="_blank" rel="noopener">
+          <span class="work__num">05</span>
+          <span class="work__title">AMAZON REVIEW ANALYSIS</span>
+          <span class="work__tag">[ NLP · BIAS ]</span>
+          <span class="work__arrow">↗</span>
+        </a>
+        <p class="work__desc">Analyzing Amazon product reviews in the Automotive section for bias.</p>
+        <div class="work__image"><img src="images/portfolioImage5.jpg" alt=""></div>
+      </li>
+      <li class="work">
+        <a href="https://github.com/Jonahrahn/PyBer_Analysis" target="_blank" rel="noopener">
+          <span class="work__num">06</span>
+          <span class="work__title">UBER DATA ANALYSIS</span>
+          <span class="work__tag">[ ANALYTICS · PANDAS ]</span>
+          <span class="work__arrow">↗</span>
+        </a>
+        <p class="work__desc">Ride-share analytics modeled after Uber data.</p>
+        <div class="work__image"><img src="images/portfolioImage6.jpg" alt=""></div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section section--contact" id="contact">
+    <div class="section__head">
+      <span class="section__num">§ 04</span>
+      <h2 class="section__title">CONTACT</h2>
+      <span class="section__rule"></span>
+    </div>
+    <div class="contact">
+      <div class="contact__pitch">
+        <p class="contact__shout">HAVE A&nbsp;<span>PROBLEM</span><br>WORTH SOLVING?</p>
+        <p class="contact__sub">Open to collaborations in linguistics, ML, and data work.</p>
       </div>
-</section>
-<!-- services section-->
-<section id="services">
-  <div class="container">
-      <h1 class="text-center">Services</h1>
-      <div class="row">
-          <div class="col-lg-4 mt-4">
-              <div class="card servicesText">
-                  <div class="card-body">
-                      <i class="fas servicesIcon fa-layer-group"></i>
-                      <h4 class="card-title mt-3">Data Analysis</h4>
-                      <p class="card-text mt-3"> Python, SQL, JavaScript, R, HTML, AWS, Tableau, Spark, Google Suite/Colab, Flask, CSS, Big Data Processing, Google Dialogflow and JSON
+      <ul class="contact__list">
+        <li><a href="https://github.com/Jonahrahn" target="_blank" rel="noopener"><span>GITHUB</span><span>↗</span></a></li>
+        <li><a href="https://www.linkedin.com/in/jonah-rahn/" target="_blank" rel="noopener"><span>LINKEDIN</span><span>↗</span></a></li>
+        <li><a href="https://www.upwork.com/freelancers/~0182af44d0369b6f1e/" target="_blank" rel="noopener"><span>UPWORK</span><span>↗</span></a></li>
+        <li><a href="https://github.com/Jonahrahn/Jonahrahn" target="_blank" rel="noopener"><span>README</span><span>↗</span></a></li>
+      </ul>
+    </div>
+  </section>
 
-                      </p>
-                  </div>
-              </div>  
-          </div>
-          <div class="col-lg-4 mt-4">
-              <div class="card servicesText">
-                  <div class="card-body">
-                      <i class='fas servicesIcon fa-search'></i>
-                      <h4 class="card-title mt-3">Linguistic Design</h4>
-                      <p class="card-text mt-3"> Syntax, Python, Language Data Processing, Computational Linguistics, Phonetics (Praat), Semantics, Translation, Phonology, and Annotation
+  <footer class="footer">
+    <div class="footer__row">
+      <span>© MMXXVI — JONAH RAHN</span>
+      <span>SANTA CRUZ / CA</span>
+      <a href="#top">BACK TO TOP ↑</a>
+    </div>
+    <div class="footer__mono">SYSTEM&nbsp;STATUS:&nbsp;<span class="blink">█</span>&nbsp;ONLINE</div>
+  </footer>
 
-                      </p>
-                  </div>
-              </div>  
-          </div>
-
-          <div class="col-lg-4 mt-4">
-              <div class="card servicesText">
-                  <div class="card-body">
-                      <i class='fas servicesIcon fa-wrench'></i>
-                      <h4 class="card-title mt-3">Artificial Intelligence</h4>
-                      <p class="card-text mt-3"> Tensorflow, Keras, Neural Networks, Machine Learning, Natural Language Processing, Deep Learning, Reinforcement Learning, and PyTorch
-                      </p>
-                  </div>
-              </div>  
-          </div>
-      </div>
-
-</section>
-
-<!-- portfolio section-->
-<section id="portfolio">
-  <div class="container mt-3">
-      <h1 class="text-center">Portfolio</h1>
-      <div class="row">
-          <div class="col-lg-4 mt-4">
-              <div class="card">
-                  <img class="card-img-top" src="images/portfolioImage1.jpg" alt="Card image" style="width:100%">
-                  <div class="card-body">
-                      <h4 class="card-title">ML Health Risk Predictor</h4>
-                      <p class="card-text">I developed a machine learning model that predicts mental health risk factors using Python and machine learning. 
-                        This project involved data preprocessing, feature engineering, model selection, and evaluation.</p>
-                      <div class="text-center">
-                          <a href="https://github.com/Jonahrahn/Mental_Health_Predictor" class="btn btn-success">Link</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-lg-4 mt-4">
-              <div class="card portfolioContent">
-                  <img class="card-img-top" src="images/portfolioImage2.jpg" alt="Card image" style="width:100%">
-                  <div class="card-body">
-                      <h4 class="card-title">Neural Network Charity Success Analysis</h4>
-                      <p class="card-text">I implemented a neural network model to analyze the success rates of charity campaigns. This project used TensorFlow and Keras for model construction and evaluation. </p>
-                      <div class="text-center">
-                          <a href="https://github.com/Jonahrahn/Neural_Network_Charity_Analysis" class="btn btn-success">Link</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-lg-4 mt-4">
-              <div class="card portfolioContent">
-                  <img class="card-img-top" src="images/portfolioImage3.jpg" alt="Card image" style="width:100%">
-                  <div class="card-body">
-                      <h4 class="card-title">Citi Bike Tableau Visualization</h4>
-                      <p class="card-text">I created an interactive Tableau visualization that explores Citi Bike data to derive insights into user behavior and usage patterns. This project involved data extraction, transformation, and visualization.</p>
-                      <div class="text-center">
-                          <a href="https://github.com/Jonahrahn/BikeSharing" class="btn btn-success">Link</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <br>
-      <div class="row">
-          <div class="col-lg-4 mt-4">
-              <div class="card portfolioContent">
-                  <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image" style="width:100%">
-                  <div class="card-body">
-                      <h4 class="card-title">Mission to Mars</h4>
-                      <p class="card-text">This project is a demonstration of using Python, Splinter, Flask, Mongo, and Beautiful Soup; to create a webpage that stores all of the collected scraped data from multiple sites.</p>
-                      <div class="text-center">
-                          <a href="https://github.com/Jonahrahn/Mission-to-Mars" class="btn btn-success">Link</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-lg-4 mt-4">
-              <div class="card portfolioContent">
-                  <img class="card-img-top" src="images/portfolioImage5.jpg" alt="Card image" style="width:100%">
-                  <div class="card-body">
-                      <h4 class="card-title">Amazon Review Analysis</h4>
-                      <p class="card-text">Analyzing Amazon Product Reviews in the Automotive Section for Bias.</p>
-                      <div class="text-center">
-                          <a href="https://github.com/Jonahrahn/Amazon_Vine_Analysis" class="btn btn-success">Link</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-lg-4 mt-4">
-              <div class="card portfolioContent">
-                  <img class="card-img-top" src="images/portfolioImage6.jpg" alt="Card image" style="width:100%">
-                  <div class="card-body">
-                      <h4 class="card-title">Uber Data Analysis</h4>
-                      <p class="card-text">Ride-Share Analytics modeled after Uber Data.</p>
-                      <div class="text-center">
-                          <a href="https://github.com/Jonahrahn/PyBer_Analysis" class="btn btn-success">Link</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-</section>
-<!-- contact section-->
-    <section id="contact">
-        <div class="container mt-3 contactContent">
-            <h1 class="text-center">Contact Me</h1>
-
-            <div class="row mt-4">
-                <div class="col-lg-6">
-                    <!-- to edit google map goto https://www.embed-map.com type your location, generate html code and copy the html  -->  
-                  <div style="max-width:100%;list-style:none; transition: none;overflow:hidden;width:500px;height:500px;">
-                      <div id="gmap-canvas" style="height:100%; width:100%;max-width:100%;">
-                        <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Santa+Cruz,+CA,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
-                        </iframe>
-                      </div>
-                      <a class="googlemaps-made" href="https://kbj9qpmy.com/hrn" id="inject-map-data">Hosting Right Now</a>
-                    <style>#gmap-canvas .text-marker{}.map-generator{max-width: 100%; max-height: 100%; background: none;</style>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </section>
-     <!-- footer section-->
-    <footer id="footer">
-        <div class="container-fluid">
-            <!-- social media icons -->
-            <div class="social-icons mt-4">
-                    
-                    <a href="https://github.com/Jonahrahn" target="_blank"><i class="fab fa-github-square"></i></a>
-                    <a href="https://www.linkedin.com/in/jonah-rahn/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.upwork.com/freelancers/~0182af44d0369b6f1e/" target="_blank"><i class="fas fa-envelope"></i></a>
-                    <a href="https://github.com/Jonahrahn/Jonahrahn" target="_blank"><i class="fas fa-book"></i></a>
-           </div>
-        </div>
-    </footer>
+  <script src="script.js"></script>
+</body>
 </html>
