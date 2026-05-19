@@ -1,58 +1,39 @@
 <!--
   ─────────────────────────────────────────────────────────────
-  PROFILE README — for github.com/Jonahrahn/Jonahrahn
-  Copy this file's contents into Jonahrahn/Jonahrahn/README.md
+  Profile README — for github.com/Jonahrahn/Jonahrahn
+  Paste this file's contents into Jonahrahn/Jonahrahn/README.md
   ─────────────────────────────────────────────────────────────
 -->
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│  J O N A H   R A H N                              [ MMXXVI ] │
-│  ENGINEERING · LINGUIST                       SANTA CRUZ, CA │
-└──────────────────────────────────────────────────────────────┘
-```
+## Jonah Rahn
 
-# `> JONAH_RAHN.exe`
+**Engineering Linguist** — Santa Cruz, CA.
+Bridging human language and machine intelligence.
+B.A. Linguistics, UC Santa Cruz · ML model optimization @ LinkedIn.
 
-**Engineering Linguist.** Bridging human language and machine intelligence.
-B.A. Linguistics — UC Santa Cruz · ML model optimization @ LinkedIn.
+[Portfolio →](https://jonahrahn.github.io) · [LinkedIn →](https://www.linkedin.com/in/jonah-rahn/) · [Upwork →](https://www.upwork.com/freelancers/~0182af44d0369b6f1e/)
 
 ---
 
-## `§ 01 — STACK`
+### What I work on
 
-```
-DATA          ░░  Python · SQL · R · JavaScript · AWS · Spark · Tableau
-LINGUISTICS   ░░  Syntax · Phonetics (Praat) · Semantics · Annotation
-AI / ML       ░░  TensorFlow · Keras · PyTorch · NLP · Deep Learning
-```
+- **Data & Analysis** — Python, SQL, R, JavaScript, AWS, Spark, Tableau
+- **Computational Linguistics** — Syntax, semantics, phonetics (Praat), annotation
+- **Machine Learning** — TensorFlow, Keras, PyTorch, NLP, deep & reinforcement learning
 
 ---
 
-## `§ 02 — INDEX / WORKS`
+### Selected projects
 
-| #   | PROJECT                                                                                           | STACK              |
-| --- | ------------------------------------------------------------------------------------------------- | ------------------ |
-| 01  | [**MENTAL HEALTH PREDICTOR**](https://github.com/Jonahrahn/Mental_Health_Predictor) ↗             | `ML · PYTHON`      |
-| 02  | [**NEURAL NETWORK CHARITY ANALYSIS**](https://github.com/Jonahrahn/Neural_Network_Charity_Analysis) ↗ | `TENSORFLOW · KERAS` |
-| 03  | [**BIKE SHARING / CITI BIKE**](https://github.com/Jonahrahn/BikeSharing) ↗                        | `TABLEAU · DATA VIZ` |
-| 04  | [**AMAZON VINE ANALYSIS**](https://github.com/Jonahrahn/Amazon_Vine_Analysis) ↗                   | `NLP · BIAS`       |
-| 05  | [**MISSION TO MARS**](https://github.com/Jonahrahn/Mission-to-Mars) ↗                             | `FLASK · MONGO`    |
-| 06  | [**PYBER / RIDE-SHARE ANALYTICS**](https://github.com/Jonahrahn/PyBer_Analysis) ↗                 | `PANDAS · MATPLOTLIB` |
-
----
-
-## `§ 03 — CONTACT`
-
-```
-GITHUB    →  github.com/Jonahrahn
-LINKEDIN  →  linkedin.com/in/jonah-rahn
-UPWORK    →  upwork.com/freelancers/~0182af44d0369b6f1e
-PORTFOLIO →  jonahrahn.github.io
-```
+| # | Project | Stack |
+|---|---|---|
+| 01 | [Mental Health Risk Predictor](https://github.com/Jonahrahn/Mental_Health_Predictor) | ML · Python |
+| 02 | [Neural Network Charity Analysis](https://github.com/Jonahrahn/Neural_Network_Charity_Analysis) | TensorFlow · Keras |
+| 03 | [Citi Bike Tableau Visualization](https://github.com/Jonahrahn/BikeSharing) | Tableau · Data Viz |
+| 04 | [Mission to Mars](https://github.com/Jonahrahn/Mission-to-Mars) | Flask · MongoDB |
+| 05 | [Amazon Review Bias Analysis](https://github.com/Jonahrahn/Amazon_Vine_Analysis) | NLP · Bias |
+| 06 | [Ride-Share Analytics](https://github.com/Jonahrahn/PyBer_Analysis) | Pandas · Matplotlib |
 
 ---
 
-```
-SYSTEM STATUS: █ ONLINE          © MMXXVI — J.R.
-```
+<sub>© Jonah Rahn · Santa Cruz, California</sub>
