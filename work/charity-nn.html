@@ -8,11 +8,14 @@
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <meta property="og:title" content="Neural Network Charity Analysis · Jonah Rahn">
   <meta property="og:description" content="Predicting charity-campaign success with a deep classifier, then pushing it past the target threshold.">
-  <meta property="og:image" content="https://jonahrahn.github.io/images/og-card.png">
+  <meta property="og:image" content="https://jonahrahn.github.io/images/og/charity-nn.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://jonahrahn.github.io/images/og/charity-nn.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body class="case-body">
@@ -34,47 +37,47 @@
       <p class="case-hero__crumb">
         <a href="../">Index</a>  <span>/</span>  <a href="../#work">Work</a>  <span>/</span>  <span>Neural Network Charity Analysis</span>
       </p>
-      <p class="eyebrow">§ 03  ·  Python · TensorFlow · Keras · Pandas</p>
+      <p class="case-meta__strip">§ 03  ·  2022  ·  ML engineer  ·  Python · TensorFlow · Keras · Pandas</p>
       <h1 class="case-hero__title">Neural Network Charity Analysis</h1>
       <p class="case-hero__tagline">Predicting charity-campaign success with a deep classifier, then pushing it past the target threshold.</p>
+      <div class="case-hero__cta">
+        <a class="btn" href="https://nbviewer.org/github/Jonahrahn/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity-Optimization.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
+        <a class="btn btn--ghost" href="https://github.com/Jonahrahn/Neural_Network_Charity_Analysis" target="_blank" rel="noopener">View code on GitHub ↗</a>
+      </div>
     </div>
   </section>
 
-  <section class="case">
-    <aside class="case__meta">
-      <dl>
-        <div><dt>Year</dt><dd>2022</dd></div>
-        <div><dt>Role</dt><dd>ML engineer</dd></div>
-        <div><dt>Stack</dt><dd>Python · TensorFlow · Keras · Pandas</dd></div>
-        <div><dt>Live</dt><dd><a href="https://nbviewer.org/github/Jonahrahn/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity-Optimization.ipynb" target="_blank" rel="noopener">View notebook ↗</a></dd></div>
-        <div><dt>Code</dt><dd><a href="https://github.com/Jonahrahn/Neural_Network_Charity_Analysis" target="_blank" rel="noopener">View code on GitHub ↗</a></dd></div>
-      </dl>
-    </aside>
+  <section class="case-body-wrap">
+    <figure class="case__figure">
+      <img src="../images/projects/02-charity-nn.png" alt="Optimized neural network accuracy reaching 79%, exceeding the 75% target">
+      <figcaption>Fig. 01  ·  Comparison of optimization runs against the 75% target</figcaption>
+    </figure>
 
-    <div class="case__body">
-      <figure class="case__figure">
-        <img src="../images/projects/02-charity-nn.png" alt="Optimized neural network accuracy reaching 79%, exceeding the 75% target">
-      </figure>
+    <article class="case__article">
+      <section class="case__section">
+        <h2><span class="case__section-num">01</span> Problem</h2>
+        <p>Given a dataset of 34,000 prior charity grants and whether each was used effectively, predict the same for a new grant. The minimum bar set by the stakeholder was 75 percent classification accuracy.</p>
+      </section>
 
-      <article class="case__article">
-        <section class="case__section">
-          <h2><span class="case__section-num">01</span> Problem</h2>
-          <p>Given a dataset of 34,000 prior charity grants and whether each was used effectively, predict the same for a new grant. The minimum bar set by the stakeholder was 75 percent classification accuracy.</p>
-        </section>
-        <section class="case__section">
-          <h2><span class="case__section-num">02</span> Approach</h2>
-          <p>Built a feed-forward neural net in TensorFlow / Keras with two hidden layers. Iterated on preprocessing: binning rare categorical values, dropping noisy columns, and ultimately keeping the NAME feature (which earlier versions dropped) because it carried predictive signal.</p>
-        </section>
-        <section class="case__section">
-          <h2><span class="case__section-num">03</span> Result</h2>
-          <p>The optimized run reached 79 percent accuracy with a 0.45 loss, clearing the 75 percent target. The single largest contributor was re-introducing the NAME feature with proper grouping rather than dropping it as identifier noise.</p>
-        </section>
-        <section class="case__cta">
-          <a class="btn" href="https://nbviewer.org/github/Jonahrahn/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity-Optimization.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
-          <a class="btn btn--ghost" href="https://github.com/Jonahrahn/Neural_Network_Charity_Analysis" target="_blank" rel="noopener">View code on GitHub ↗</a>
-        </section>
-      </article>
-    </div>
+      <aside class="case__pull">
+        <em>The biggest gain came from a feature everyone else was throwing away.</em>
+      </aside>
+
+      <section class="case__section">
+        <h2><span class="case__section-num">02</span> Approach</h2>
+        <p>Built a feed-forward neural net in TensorFlow / Keras with two hidden layers. Iterated on preprocessing: binning rare categorical values, dropping noisy columns, and ultimately keeping the NAME feature (which earlier versions dropped) because it carried predictive signal.</p>
+      </section>
+
+      <section class="case__section">
+        <h2><span class="case__section-num">03</span> Result</h2>
+        <p>The optimized run reached 79 percent accuracy with a 0.45 loss, clearing the 75 percent target. The single largest contributor was re-introducing the NAME feature with proper grouping rather than dropping it as identifier noise.</p>
+      </section>
+
+      <section class="case__cta">
+        <a class="btn" href="https://nbviewer.org/github/Jonahrahn/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity-Optimization.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
+        <a class="btn btn--ghost" href="https://github.com/Jonahrahn/Neural_Network_Charity_Analysis" target="_blank" rel="noopener">View code on GitHub ↗</a>
+      </section>
+    </article>
   </section>
 
   <nav class="case-nav">

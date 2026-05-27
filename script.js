@@ -89,7 +89,7 @@ if (reduceMotion) {
 }
 
 // ---------- Hero parallax --------------------------------------------------
-const heroInner = document.querySelector('.hero__inner');
+const heroInner = document.querySelector('.hero__grid');
 if (heroInner && !reduceMotion) {
   let ticking = false;
   const onScroll = () => {
@@ -133,6 +133,50 @@ if (previews.length && !reduceMotion) {
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+}
+
+// ---------- View Transitions: smooth crossfade between same-origin links ---
+if (document.startViewTransition && !reduceMotion) {
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    if (a.target === '_blank') return;
+    if (a.hasAttribute('download')) return;
+    const href = a.getAttribute('href');
+    if (!href) return;
+    if (href.startsWith('#')) return;          // anchors stay native
+    if (href.startsWith('http')) {
+      const url = new URL(href);
+      if (url.origin !== location.origin) return;
+    }
+    e.preventDefault();
+    document.startViewTransition(() => {
+      window.location.href = a.href;
+    });
+  });
+}
+
+// ---------- Subtle cursor accent: tiny lagging dot (no replacement) -------
+if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const dot = document.createElement('div');
+  dot.className = 'cursor-accent';
+  dot.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(dot);
+  let x = -100, y = -100, cx = x, cy = y;
+  window.addEventListener('mousemove', (e) => { x = e.clientX; y = e.clientY; });
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest('a, button, .work-item, .capability')) dot.classList.add('is-hover');
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest('a, button, .work-item, .capability')) dot.classList.remove('is-hover');
+  });
+  const step = () => {
+    cx += (x - cx) * 0.22;
+    cy += (y - cy) * 0.22;
+    dot.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+    requestAnimationFrame(step);
+  };
+  step();
 }
 
 // ---------- Footer year ----------------------------------------------------

@@ -17,6 +17,8 @@ CASES = [
         "stack": "Python · Tableau · Pandas",
         "image": "../images/projects/03-citi-bike.png",
         "image_alt": "Citi Bike trip volume by start hour, showing twin commuter peaks at 8am and 5pm",
+        "pull": "Twin commuter peaks tell the whole story.",
+        "image_caption": "Trips by hour of day, NYC August 2018",
         "live": ("Open in Tableau", "https://public.tableau.com/app/profile/jonah.rahn/viz/NYCBIke/NYCCitiBike"),
         "code": ("View code on GitHub", "https://github.com/Jonahrahn/BikeSharing"),
         "problem": (
@@ -47,6 +49,8 @@ CASES = [
         "stack": "Python · Scikit-Learn · SQLite · Tableau · Flask",
         "image": "../images/projects/01-mental-health.png",
         "image_alt": "Feature importance bar chart for the mental health risk model",
+        "pull": "Income inequality, not income level, was the strongest predictor.",
+        "image_caption": "Random Forest feature importances",
         "live": ("View notebook", "https://nbviewer.org/github/Jonahrahn/Mental_Health_Predictor/blob/main/MachineLearning_Shallow_and_Deep.ipynb"),
         "code": ("View code on GitHub", "https://github.com/Jonahrahn/Mental_Health_Predictor"),
         "problem": (
@@ -78,6 +82,8 @@ CASES = [
         "stack": "Python · TensorFlow · Keras · Pandas",
         "image": "../images/projects/02-charity-nn.png",
         "image_alt": "Optimized neural network accuracy reaching 79%, exceeding the 75% target",
+        "pull": "The biggest gain came from a feature everyone else was throwing away.",
+        "image_caption": "Comparison of optimization runs against the 75% target",
         "live": ("View notebook", "https://nbviewer.org/github/Jonahrahn/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity-Optimization.ipynb"),
         "code": ("View code on GitHub", "https://github.com/Jonahrahn/Neural_Network_Charity_Analysis"),
         "problem": (
@@ -109,6 +115,8 @@ CASES = [
         "stack": "Python · Splinter · BeautifulSoup · Flask · MongoDB",
         "image": "../images/projects/04-mission-to-mars.png",
         "image_alt": "Composition of the data the Mission to Mars app aggregates: news headline, hemispheres, and Mars facts",
+        "pull": "An end-to-end exercise in pulling scattered sources into one pane.",
+        "image_caption": "What the app aggregates: news, hemispheres, facts",
         "live": ("View notebook", "https://nbviewer.org/github/Jonahrahn/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb"),
         "code": ("View code on GitHub", "https://github.com/Jonahrahn/Mission-to-Mars"),
         "problem": (
@@ -139,6 +147,8 @@ CASES = [
         "stack": "Python · PySpark · PostgreSQL · Pandas",
         "image": "../images/projects/05-amazon-vine.png",
         "image_alt": "Proportion bar: 82 paid Vine reviews vs 24,742 unpaid public reviews in the automotive category",
+        "pull": "Vine reviewers are 0.33% of the corpus. That's the headline.",
+        "image_caption": "Paid Vine reviews vs unpaid public reviews, automotive category",
         "live": ("View notebook", "https://nbviewer.org/github/Jonahrahn/Amazon_Vine_Analysis/blob/main/Vine_Reviews_ETL.ipynb"),
         "code": ("View code on GitHub", "https://github.com/Jonahrahn/Amazon_Vine_Analysis"),
         "problem": (
@@ -170,6 +180,8 @@ CASES = [
         "stack": "Python · Pandas · Matplotlib",
         "image": "../images/projects/06-pyber.png",
         "image_alt": "Weekly total fare by city type, January through April: urban dominates, suburban steady, rural minimal",
+        "pull": "Urban dominates. Suburban is steady. Rural barely registers.",
+        "image_caption": "Weekly total fares by city type, Jan to Apr 2019",
         "live": ("View notebook", "https://nbviewer.org/github/Jonahrahn/PyBer_Analysis/blob/main/PyBer_Challenge.ipynb"),
         "code": ("View code on GitHub", "https://github.com/Jonahrahn/PyBer_Analysis"),
         "problem": (
@@ -205,11 +217,14 @@ TEMPLATE = """\
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <meta property="og:title" content="{title} · Jonah Rahn">
   <meta property="og:description" content="{tagline}">
-  <meta property="og:image" content="https://jonahrahn.github.io/images/og-card.png">
+  <meta property="og:image" content="https://jonahrahn.github.io/images/og/{slug}.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://jonahrahn.github.io/images/og/{slug}.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body class="case-body">
@@ -231,47 +246,47 @@ TEMPLATE = """\
       <p class="case-hero__crumb">
         <a href="../">Index</a>  <span>/</span>  <a href="../#work">Work</a>  <span>/</span>  <span>{title}</span>
       </p>
-      <p class="eyebrow">§ {num}  ·  {stack}</p>
+      <p class="case-meta__strip">§ {num}  ·  {year}  ·  {role}  ·  {stack}</p>
       <h1 class="case-hero__title">{title}</h1>
       <p class="case-hero__tagline">{tagline}</p>
+      <div class="case-hero__cta">
+        <a class="btn" href="{live_href}" target="_blank" rel="noopener">{live_label} ↗</a>
+        <a class="btn btn--ghost" href="{code_href}" target="_blank" rel="noopener">{code_label} ↗</a>
+      </div>
     </div>
   </section>
 
-  <section class="case">
-    <aside class="case__meta">
-      <dl>
-        <div><dt>Year</dt><dd>{year}</dd></div>
-        <div><dt>Role</dt><dd>{role}</dd></div>
-        <div><dt>Stack</dt><dd>{stack}</dd></div>
-        <div><dt>Live</dt><dd><a href="{live_href}" target="_blank" rel="noopener">{live_label} ↗</a></dd></div>
-        <div><dt>Code</dt><dd><a href="{code_href}" target="_blank" rel="noopener">{code_label} ↗</a></dd></div>
-      </dl>
-    </aside>
+  <section class="case-body-wrap">
+    <figure class="case__figure">
+      <img src="{image}" alt="{image_alt}">
+      <figcaption>Fig. 01  ·  {image_caption}</figcaption>
+    </figure>
 
-    <div class="case__body">
-      <figure class="case__figure">
-        <img src="{image}" alt="{image_alt}">
-      </figure>
+    <article class="case__article">
+      <section class="case__section">
+        <h2><span class="case__section-num">01</span> Problem</h2>
+        <p>{problem}</p>
+      </section>
 
-      <article class="case__article">
-        <section class="case__section">
-          <h2><span class="case__section-num">01</span> Problem</h2>
-          <p>{problem}</p>
-        </section>
-        <section class="case__section">
-          <h2><span class="case__section-num">02</span> Approach</h2>
-          <p>{approach}</p>
-        </section>
-        <section class="case__section">
-          <h2><span class="case__section-num">03</span> Result</h2>
-          <p>{result}</p>
-        </section>
-        <section class="case__cta">
-          <a class="btn" href="{live_href}" target="_blank" rel="noopener">{live_label} ↗</a>
-          <a class="btn btn--ghost" href="{code_href}" target="_blank" rel="noopener">{code_label} ↗</a>
-        </section>
-      </article>
-    </div>
+      <aside class="case__pull">
+        <em>{pull}</em>
+      </aside>
+
+      <section class="case__section">
+        <h2><span class="case__section-num">02</span> Approach</h2>
+        <p>{approach}</p>
+      </section>
+
+      <section class="case__section">
+        <h2><span class="case__section-num">03</span> Result</h2>
+        <p>{result}</p>
+      </section>
+
+      <section class="case__cta">
+        <a class="btn" href="{live_href}" target="_blank" rel="noopener">{live_label} ↗</a>
+        <a class="btn btn--ghost" href="{code_href}" target="_blank" rel="noopener">{code_label} ↗</a>
+      </section>
+    </article>
   </section>
 
   <nav class="case-nav">
@@ -301,6 +316,7 @@ TEMPLATE = """\
 
 for c in CASES:
     html = TEMPLATE.format(
+        slug=c["slug"],
         title=c["title"],
         tagline=c["tagline"],
         num=c["num"],
@@ -309,6 +325,8 @@ for c in CASES:
         stack=c["stack"],
         image=c["image"],
         image_alt=c["image_alt"],
+        image_caption=c.get("image_caption", c["image_alt"]),
+        pull=c.get("pull", c["tagline"]),
         live_label=c["live"][0],
         live_href=c["live"][1],
         code_label=c["code"][0],
