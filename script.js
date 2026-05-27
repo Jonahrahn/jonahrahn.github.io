@@ -29,18 +29,6 @@ document.querySelectorAll('.nav__links a').forEach((link) => {
 
 const sections = Array.from(document.querySelectorAll('section[id]'));
 const navLinks = document.querySelectorAll('.nav__links a');
-const marker = document.querySelector('.section-marker');
-const markerNum = marker?.querySelector('.section-marker__num');
-const markerTitle = marker?.querySelector('.section-marker__title');
-
-const SECTION_META = {
-  home:         { num: '§ 00', title: 'Index' },
-  about:        { num: '§ 01', title: 'About' },
-  capabilities: { num: '§ 02', title: 'Capabilities' },
-  work:         { num: '§ 03', title: 'Selected Work' },
-  earlier:      { num: '§ 04', title: 'Earlier Projects' },
-  contact:      { num: '§ 05', title: 'Contact' },
-};
 
 const spy = new IntersectionObserver(
   (entries) => {
@@ -50,12 +38,6 @@ const spy = new IntersectionObserver(
       navLinks.forEach((l) => {
         l.classList.toggle('is-active', l.getAttribute('href') === `#${id}`);
       });
-      const meta = SECTION_META[id];
-      if (meta && marker) {
-        markerNum.textContent = meta.num;
-        markerTitle.textContent = meta.title;
-        marker.classList.toggle('is-visible', id !== 'home');
-      }
     });
   },
   { rootMargin: '-45% 0px -50% 0px' }

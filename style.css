@@ -567,35 +567,6 @@ button { font: inherit; cursor: pointer; }
   transition: transform 0.08s linear;
 }
 
-/* Sticky section marker (chapter chip) */
-.section-marker {
-  position: fixed;
-  left: 24px;
-  top: 64px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 12px;
-  border: 1px solid var(--ink);
-  background: rgba(250, 250, 247, 0.94);
-  backdrop-filter: saturate(140%) blur(6px);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  z-index: 45;
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
-.section-marker.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.section-marker__num { color: var(--accent); font-weight: 500; }
-.section-marker__title { color: var(--ink); font-weight: 500; }
-
 /* Hero scroll cue */
 .hero__scroll-cue {
   position: absolute;
@@ -687,7 +658,6 @@ button { font: inherit; cursor: pointer; }
 
 /* Hide heavier ornament on coarse pointers (touch) */
 @media (hover: none), (pointer: coarse) {
-  .section-marker { display: none; }
   .hero__scroll-cue { display: none; }
 }
 

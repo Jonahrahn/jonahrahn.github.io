@@ -34,7 +34,7 @@ CASES = [
             "casual users; clear differences in trip duration between user segments. "
             "The dashboard is published on Tableau Public and embedded live on the home page."
         ),
-        "prev": ("Earlier projects", "../#earlier"),
+        "prev": ("More Work", "../#earlier"),
         "next": ("Mental Health Risk Predictor", "mental-health.html"),
     },
     {

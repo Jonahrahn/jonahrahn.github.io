@@ -30,15 +30,8 @@ fig.text(0.05, 0.86, "E N G I N E E R I N G   L I N G U I S T   ·   S A N T A  
 # Top hairline
 fig.add_artist(plt.Line2D([0.05, 0.95], [0.81, 0.81], color=INK, linewidth=1, transform=fig.transFigure))
 
-# Draw "Jonah Rahn" then a rust dot to its right
-title = fig.text(0.05, 0.46, "Jonah Rahn",
-                 fontproperties=INTER, fontsize=110, color=INK, weight="bold")
-# Position the dot using a transform-aware text after layout
-fig.canvas.draw()
-bbox = title.get_window_extent()
-xinv, yinv = fig.transFigure.inverted().transform((bbox.x1, bbox.y0)).tolist()
-fig.text(xinv + 0.005, 0.46, ".",
-         fontproperties=INTER, fontsize=110, color=ACCENT, weight="bold")
+fig.text(0.05, 0.46, "Jonah Rahn",
+         fontproperties=INTER, fontsize=110, color=INK, weight="bold")
 
 fig.text(0.05, 0.28, "Bridging human language and machine intelligence.",
          fontproperties=INTER, fontsize=22, color=INK)
