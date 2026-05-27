@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>What "language data quality" actually means in production · Jonah Rahn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A working definition of language data quality, derived from watching well-intentioned annotation efforts produce inconsistent labels and drift over time.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What language data quality actually means in production">
+  <meta property="og:description" content="A working definition of language data quality, derived from three years of shipping ML systems.">
+  <meta property="og:image" content="https://jonahrahn.github.io/images/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!--
+    DRAFT: this essay was scaffolded for Jonah to personalize. Replace placeholder
+    examples (marked PERSONALIZE) with real situations from your work. The shape
+    and argument are deliberate; rewrite as much of the prose as you like, but
+    preserve the structure: definition + counter-examples + diagnostic.
+  -->
+
+  <header class="nav" id="top">
+    <a class="nav__brand" href="/">Jonah Rahn</a>
+    <nav class="nav__links">
+      <a href="/#about">About</a>
+      <a href="/#work">Selected Work</a>
+      <a href="/writing/">Writing</a>
+      <a href="/reading.html">Reading</a>
+      <a href="/#contact">Contact</a>
+      <a class="nav__resume" href="/resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">Menu</button>
+  </header>
+
+  <article class="essay">
+    <header class="essay__head">
+      <p class="case-hero__crumb">
+        <a href="/">Index</a>  <span>/</span>  <a href="/writing/">Writing</a>  <span>/</span>  <span>Language data quality</span>
+      </p>
+      <p class="case-meta__strip">§ Essay  ·  2026  ·  12 min read</p>
+      <h1 class="essay__title">What "language data quality" actually means in production</h1>
+      <p class="essay__tagline">A working definition, derived from watching well-intentioned annotation efforts produce inconsistent labels, drift over time, and miss the edge cases that matter.</p>
+    </header>
+
+    <div class="essay__body">
+
+      <p class="essay__dropcap">
+        Every ML team that handles language eventually hires someone to "improve data quality." The job description varies. The actual work, in my experience, almost always converges on the same handful of activities. This is an attempt to name them honestly, because the conventional framing — "high inter-rater agreement" — covers maybe a third of what the work actually is.
+      </p>
+
+      <h2>The conventional definition is too narrow</h2>
+
+      <p>
+        When most teams say "language data quality" they mean: <em>do our annotators agree?</em> That is measurable, defensible, easy to put in a slide. It is also a thin slice of the actual problem.
+      </p>
+
+      <p>
+        Inter-rater agreement (IRA) tells you whether two people, given the same item and the same guidelines, produce the same label. It says almost nothing about whether the labels are <em>useful</em>, whether they generalize to held-out distributions, whether the guidelines themselves match the phenomenon, or whether the labeled space covers the inputs the model will actually see. High IRA on a poorly-chosen schema produces a high-confidence wrong dataset. I have shipped that dataset. So has everyone reading this.
+      </p>
+
+      <aside class="essay__pull">
+        <em>"High IRA on a poorly-chosen schema produces a high-confidence wrong dataset."</em>
+      </aside>
+
+      <h2>A working definition</h2>
+
+      <p>
+        Language data quality, as I have come to think of it, is the property of an annotated corpus that makes a model trained on it behave predictably on inputs the corpus did not contain. It rests on five sub-properties, and they are not equally weighted:
+      </p>
+
+      <ol class="essay__list">
+        <li>
+          <strong>Consistency</strong> — annotators applying the same label to the same phenomenon over time and across reviewers. This is what IRA actually measures. It is necessary but not sufficient.
+        </li>
+        <li>
+          <strong>Coverage</strong> — the corpus contains examples of every phenomenon the model will need to handle, in the rough proportions it will encounter them. This is the part teams systematically under-invest in.
+        </li>
+        <li>
+          <strong>Calibration</strong> — the labels match the actual linguistic distinction they claim to capture. PERSON vs ORG looks easy; "is <em>Apple</em> in the sentence <em>Apple announced layoffs</em> a person or an org" gets harder fast.
+        </li>
+        <li>
+          <strong>Drift resistance</strong> — the labeling regime stays stable as annotators rotate, as guidelines evolve, and as the input distribution shifts. Most teams discover this only when they try to merge an old labeled batch with a new one and the model gets worse.
+        </li>
+        <li>
+          <strong>Negative coverage</strong> — explicit examples of what is <em>not</em> the phenomenon, of the edge cases the guidelines hand-wave past, and of the disagreements that were resolved by fiat. The third document an annotator opens should be a hard case, not an obvious one.
+        </li>
+      </ol>
+
+      <h2>The diagnostic: ask three questions of any labeling effort</h2>
+
+      <p>
+        Whenever I am brought in to audit an annotation pipeline, I start with the same three questions. They are unscientific. They work.
+      </p>
+
+      <p>
+        <strong>One.</strong> Pull a random sample of the labeled corpus. Can you predict, in advance, which 5% of items the annotators disagreed on? If you can — if the disagreements cluster in known categories — the guidelines are doing their job. If the disagreements are scattered, the guidelines aren't a contract; they're vibes.
+      </p>
+
+      <p>
+        <strong>Two.</strong> Show two annotators a held-out sample labeled six months apart, by different people, with no context. Do the labels match? This catches the slow drift that month-over-month IRA misses. <em>(PERSONALIZE: insert a specific case where you discovered drift like this.)</em>
+      </p>
+
+      <p>
+        <strong>Three.</strong> Ask the model. Train a small classifier on a 70/30 split, look at the items where the model is most confident and gets it wrong. Those items are usually mislabeled. If your "errors" are actually annotator errors, you have a coverage problem more than a model problem.
+      </p>
+
+      <h2>What this means for tooling</h2>
+
+      <p>
+        Most annotation platforms are built around the consistency axis. They surface IRA, they let you review disagreements, they generate gold sets. That is necessary. It is also not where the leverage is.
+      </p>
+
+      <p>
+        The tooling I keep wishing existed:
+      </p>
+
+      <ul class="essay__list">
+        <li>A <strong>drift detector</strong> that flags when an annotator's label distribution shifts week-over-week and tells you which categories are moving.</li>
+        <li>A <strong>guideline-aware suggester</strong> that, when an annotator hovers over an ambiguous span, surfaces the relevant guideline passage rather than just a label dropdown.</li>
+        <li>A <strong>negative-coverage generator</strong> that takes labeled examples and produces near-misses for annotators to disambiguate, so the guidelines get stress-tested against their own boundary cases.</li>
+        <li>A <strong>schema critique pass</strong> — basically, a linter for the labels themselves. If two labels are functionally identical on 80% of items, you have one label, not two.</li>
+      </ul>
+
+      <p>
+        None of these are exotic. They are also not what most teams build.
+      </p>
+
+      <h2>The harder half</h2>
+
+      <p>
+        Everything above is tractable. The harder half of language data quality is political: deciding, often without sufficient evidence, which linguistic distinctions matter enough to enshrine in a schema. That conversation belongs to linguists and product people together, and it almost never happens.
+      </p>
+
+      <p>
+        When I am asked what "engineering linguist" means as a role, the honest answer is: someone who can hold the linguistic question and the production constraint in the same head, and who is willing to lose both arguments productively. The artifact is the schema. The schema is the contract. Everything downstream is downstream of the contract.
+      </p>
+
+      <p class="essay__signoff">
+        <em>If you have built tooling along these lines, or seen any of these failure modes play out differently, I would like to hear about it. Reach me <a href="/#contact">here</a>.</em>
+      </p>
+
+    </div>
+  </article>
+
+  <nav class="case-nav">
+    <a class="case-nav__prev" href="/writing/">
+      <span class="case-nav__label">← All writing</span>
+      <span class="case-nav__title">Index</span>
+    </a>
+    <a class="case-nav__next" href="multilingual-ml-failures.html">
+      <span class="case-nav__label">Next →</span>
+      <span class="case-nav__title">Three failure modes in multilingual ML</span>
+    </a>
+  </nav>
+
+  <footer class="footer">
+    <div class="footer__row">
+      <span>© <span id="year">2026</span> Jonah Rahn</span>
+      <span>Santa Cruz, California</span>
+      <a href="/">Back to portfolio</a>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

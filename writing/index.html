@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Writing · Jonah Rahn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Essays and field notes on linguistics, machine learning, and language data work by Jonah Rahn.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:title" content="Writing · Jonah Rahn">
+  <meta property="og:description" content="Essays and field notes on linguistics, machine learning, and language data work.">
+  <meta property="og:image" content="https://jonahrahn.github.io/images/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <a class="nav__brand" href="/">Jonah Rahn</a>
+    <nav class="nav__links">
+      <a href="/#about">About</a>
+      <a href="/#work">Selected Work</a>
+      <a href="/writing/">Writing</a>
+      <a href="/reading.html">Reading</a>
+      <a href="/#contact">Contact</a>
+      <a class="nav__resume" href="/resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">Menu</button>
+  </header>
+
+  <main class="writing-index">
+    <div class="writing-index__inner">
+      <p class="case-meta__strip">§ Writing</p>
+      <h1 class="writing-index__title">Essays and field notes.</h1>
+      <p class="writing-index__intro">
+        <em>How I think about language data, evaluation, and the unglamorous parts of shipping ML. These are working notes more than finished essays. I update them as my thinking shifts.</em>
+      </p>
+
+      <ol class="writing-list">
+        <li class="writing-list__item">
+          <a href="language-data-quality.html">
+            <span class="writing-list__meta">2026 · Essay · 12 min read</span>
+            <h2 class="writing-list__title">What "language data quality" actually means in production</h2>
+            <p class="writing-list__lede">A working definition, derived from three years of watching well-intentioned annotation efforts produce inconsistent labels, drift over time, and miss the edge cases that matter.</p>
+          </a>
+        </li>
+        <li class="writing-list__item">
+          <a href="multilingual-ml-failures.html">
+            <span class="writing-list__meta">2026 · Field notes · 6 min read</span>
+            <h2 class="writing-list__title">Three failure modes I see in multilingual ML</h2>
+            <p class="writing-list__lede">Patterns that recur across ML systems serving more than one language, and the linguistic explanations for why they keep recurring.</p>
+          </a>
+        </li>
+      </ol>
+
+      <p class="writing-index__rss">
+        New writing drops here irregularly. <a href="/feed.xml" style="color: var(--accent);">RSS feed</a>.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__row">
+      <span>© <span id="year">2026</span> Jonah Rahn</span>
+      <span>Santa Cruz, California</span>
+      <a href="/">Back to portfolio</a>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

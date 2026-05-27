@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Three failure modes I see in multilingual ML · Jonah Rahn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Patterns that recur across ML systems serving more than one language, and the linguistic explanations for why they keep recurring.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Three failure modes I see in multilingual ML">
+  <meta property="og:description" content="Patterns that recur across multilingual ML systems, and why.">
+  <meta property="og:image" content="https://jonahrahn.github.io/images/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!--
+    DRAFT: this essay was scaffolded for Jonah to personalize. Replace placeholder
+    examples (marked PERSONALIZE) with real situations you have seen. The argument
+    is deliberate; edit prose freely.
+  -->
+
+  <header class="nav" id="top">
+    <a class="nav__brand" href="/">Jonah Rahn</a>
+    <nav class="nav__links">
+      <a href="/#about">About</a>
+      <a href="/#work">Selected Work</a>
+      <a href="/writing/">Writing</a>
+      <a href="/reading.html">Reading</a>
+      <a href="/#contact">Contact</a>
+      <a class="nav__resume" href="/resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">Menu</button>
+  </header>
+
+  <article class="essay">
+    <header class="essay__head">
+      <p class="case-hero__crumb">
+        <a href="/">Index</a>  <span>/</span>  <a href="/writing/">Writing</a>  <span>/</span>  <span>Multilingual ML failures</span>
+      </p>
+      <p class="case-meta__strip">§ Field notes  ·  2026  ·  6 min read</p>
+      <h1 class="essay__title">Three failure modes I see in multilingual ML</h1>
+      <p class="essay__tagline">Patterns that recur across ML systems serving more than one language, and the linguistic explanations for why they keep recurring.</p>
+    </header>
+
+    <div class="essay__body">
+
+      <p class="essay__dropcap">
+        Across enough multilingual systems, three failures show up so reliably that they're closer to laws than tendencies. Each one is the same shape: a monolingual default leaks into the multilingual pipeline and the system fails most where the assumption was wrong. Naming them is not a contribution. Naming them <em>linguistically</em> is.
+      </p>
+
+      <h2>1. The English-default tokenizer</h2>
+
+      <p>
+        A subword tokenizer trained on a corpus that's 92% English will allocate 92% of its vocabulary to English-shaped substrings. The result: English words become single tokens; words in other languages become long token sequences. For agglutinative languages — Turkish, Finnish, Tagalog — a single semantic word can blow up into eight or ten tokens.
+      </p>
+
+      <p>
+        Downstream this shows up as: latency cliffs on non-English inputs, context-window exhaustion on languages with long compound words, attention patterns that struggle to find the head of a clause because the head is now spread across many tokens, and a quiet quality gap that doesn't show up in BLEU but shows up in user complaints.
+      </p>
+
+      <p>
+        The fix isn't "more multilingual training data." It's vocabulary balance, which is upstream of every model decision. <em>(PERSONALIZE: insert a specific example where you saw this play out.)</em>
+      </p>
+
+      <h2>2. Pragmatic-default fine-tuning</h2>
+
+      <p>
+        Pragmatics — politeness, register, honorifics, indirectness — varies wildly across languages. When you fine-tune a model on English instruction data and apply it across locales, the model develops English pragmatic defaults: direct, low-deference, presumes speaker-hearer equality.
+      </p>
+
+      <p>
+        In Japanese, Korean, or Tagalog, that's not just wrong — it's actively rude. The system speaks to a user as if they were both peers, when the user's own utterance signaled that they expected to be addressed differently. The model is technically correct and socially broken.
+      </p>
+
+      <aside class="essay__pull">
+        <em>The system speaks to a user as if they were both peers, when the user's own utterance signaled that they expected to be addressed differently.</em>
+      </aside>
+
+      <p>
+        I don't know any team that systematically evaluates pragmatic appropriateness across locales. Most teams catch this only after a PR incident. <em>(PERSONALIZE: cite the closest near-miss you've seen.)</em>
+      </p>
+
+      <h2>3. Code-switching as an out-of-distribution event</h2>
+
+      <p>
+        A bilingual user mid-sentence switches from Tagalog to English and back, the way bilinguals do. The ASR model, the NER model, the intent classifier — all of them treat the switch as out-of-distribution input. Quality drops sharply for the first three to five tokens after a switch and recovers slowly, if at all.
+      </p>
+
+      <p>
+        Code-switching isn't an edge case. It's the default mode of communication for a large fraction of the world's bilinguals. We treat it as edge because our evaluation suites are constructed from monolingual sources. The gap between "what the system was tested on" and "what the system is used for" is enormous, and almost completely invisible to teams whose monitoring is built on token-level WER.
+      </p>
+
+      <p>
+        The cheap diagnostic: <em>run your eval suite, then run a code-switched version of it, compare</em>. If you don't have a code-switched version of your eval suite, you don't know how badly your bilingual users are being served.
+      </p>
+
+      <h2>The shared pattern</h2>
+
+      <p>
+        All three failures have the same shape. Some piece of the pipeline was built with a monolingual assumption baked in, and that assumption leaks downstream until it surfaces as a quality problem in a language the team doesn't speak. Fixing them isn't about more capacity at the model end. It's about treating language difference as a first-class constraint at every layer: tokenization, evaluation, pragmatic norms, even the way bugs are triaged.
+      </p>
+
+      <p>
+        That's a linguist's job description, written from the outside in.
+      </p>
+
+      <p class="essay__signoff">
+        <em>Counter-examples welcome. I am especially interested in cases where one of these failures was caught upstream rather than in production. <a href="/#contact">Get in touch</a>.</em>
+      </p>
+
+    </div>
+  </article>
+
+  <nav class="case-nav">
+    <a class="case-nav__prev" href="language-data-quality.html">
+      <span class="case-nav__label">← Previous</span>
+      <span class="case-nav__title">Language data quality in production</span>
+    </a>
+    <a class="case-nav__next" href="/writing/">
+      <span class="case-nav__label">All writing →</span>
+      <span class="case-nav__title">Index</span>
+    </a>
+  </nav>
+
+  <footer class="footer">
+    <div class="footer__row">
+      <span>© <span id="year">2026</span> Jonah Rahn</span>
+      <span>Santa Cruz, California</span>
+      <a href="/">Back to portfolio</a>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
