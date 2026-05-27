@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+data/seame/
+data/bangor/*.wav
+data/bangor/*.16k.wav
+data/tgl-eng/*.wav
+results/
+.env
+.venv/
