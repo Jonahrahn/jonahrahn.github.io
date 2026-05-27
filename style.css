@@ -123,11 +123,13 @@ button { font: inherit; cursor: pointer; }
    HERO
    ========================================================= */
 .hero {
+  position: relative;
   min-height: 92vh;
   display: flex;
   align-items: center;
   padding: 140px var(--gutter) 80px;
   border-bottom: var(--rule-w) solid var(--ink);
+  overflow: hidden;
 }
 .hero__inner { max-width: var(--max); width: 100%; margin: 0 auto; }
 .hero__title {
@@ -259,17 +261,52 @@ button { font: inherit; cursor: pointer; }
 }
 .work-item {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 32px;
-  padding: 32px 0;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 48px;
+  padding: 56px 0;
   border-bottom: var(--rule-w) solid var(--ink);
-  align-items: start;
+  align-items: center;
+}
+.work-item--reverse .work-item__preview { order: 2; }
+.work-item--reverse .work-item__content { order: 1; }
+
+.work-item__preview {
+  margin: 0;
+  border: var(--rule-w) solid var(--ink);
+  background: var(--paper-2);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+.work-item__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+.work-item:hover .work-item__preview img { transform: scale(1.03); }
+
+.work-item__preview--embed { aspect-ratio: 16 / 11; }
+.work-item__preview--embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.work-item__preview--embed:hover img { transform: none; }
+
+.work-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 .work-item__meta {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-top: 8px;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 6px;
+  border-bottom: var(--rule-w) solid var(--ink);
 }
 .work-item__num {
   font-family: var(--mono);
@@ -289,7 +326,7 @@ button { font: inherit; cursor: pointer; }
   font-size: clamp(1.4rem, 2.4vw, 1.9rem);
   letter-spacing: -0.02em;
   line-height: 1.15;
-  margin-bottom: 12px;
+  margin: 4px 0 4px;
 }
 .work-item__title a {
   display: inline-flex;
@@ -297,17 +334,49 @@ button { font: inherit; cursor: pointer; }
   gap: 14px;
   transition: color 0.18s;
 }
+.work-item__title a:hover { color: var(--accent); }
 .work-item__arrow {
   display: inline-block;
   font-weight: 400;
   transition: transform 0.2s ease;
 }
-.work-item__title a:hover { color: var(--accent); }
 .work-item__title a:hover .work-item__arrow { transform: translateX(6px); }
 .work-item__desc {
-  max-width: 64ch;
+  max-width: 56ch;
   color: var(--ink-2);
   font-size: 15px;
+  margin-bottom: 6px;
+}
+.work-item__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.work-item__action {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border: var(--rule-w) solid var(--ink);
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.work-item__action--live {
+  background: var(--ink);
+  color: var(--paper);
+}
+.work-item__action--live:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.work-item__action--code {
+  background: transparent;
+  color: var(--ink);
+}
+.work-item__action--code:hover {
+  background: var(--ink);
+  color: var(--paper);
 }
 
 /* =========================================================
@@ -398,10 +467,234 @@ button { font: inherit; cursor: pointer; }
 
   .work-item {
     grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 28px 0;
+    gap: 20px;
+    padding: 36px 0;
   }
-  .work-item__meta { flex-direction: row; gap: 16px; padding-top: 0; }
+  .work-item--reverse .work-item__preview,
+  .work-item--reverse .work-item__content { order: initial; }
+  .work-item__preview { aspect-ratio: 16 / 10; }
+  .work-item__preview--embed { aspect-ratio: 4 / 3; }
 
   .contact { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* =========================================================
+   CINEMATIC LAYER — scroll progress, reveals, marker,
+   cursor, marquee, parallax. Gated on reduced-motion.
+   ========================================================= */
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 60;
+  pointer-events: none;
+  transition: transform 0.08s linear;
+}
+
+/* Sticky section marker (chapter chip) */
+.section-marker {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border: 1px solid var(--ink);
+  background: rgba(250, 250, 247, 0.92);
+  backdrop-filter: saturate(140%) blur(8px);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  z-index: 45;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+.section-marker.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.section-marker__num { color: var(--accent); font-weight: 500; }
+.section-marker__title { color: var(--ink); font-weight: 500; }
+
+/* Custom cursor (desktop only, fine pointer) */
+.cursor-ring,
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 100;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+  will-change: transform;
+}
+.cursor-ring {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--ink);
+  transform: translate(-50%, -50%);
+}
+.cursor-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--ink);
+  transform: translate(-50%, -50%);
+}
+body.cursor-ready .cursor-ring,
+body.cursor-ready .cursor-dot { opacity: 1; }
+body.cursor-hover .cursor-ring {
+  width: 56px;
+  height: 56px;
+  border-color: var(--accent);
+}
+body.cursor-hover .cursor-dot {
+  background: var(--accent);
+}
+body.cursor-ready { cursor: none; }
+body.cursor-ready a,
+body.cursor-ready button,
+body.cursor-ready input,
+body.cursor-ready textarea { cursor: none; }
+
+/* Marquee */
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 14px 0;
+  background: var(--paper);
+  position: relative;
+  z-index: 1;
+}
+.marquee__track {
+  display: inline-flex;
+  align-items: center;
+  gap: 26px;
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  animation: marquee 38s linear infinite;
+  will-change: transform;
+}
+.marquee__track > span:not(.marquee__dot) {
+  position: relative;
+}
+.marquee__dot { color: var(--accent); }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Hero scroll cue */
+.hero__scroll-cue {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  rotate: 180deg;
+}
+.hero__scroll-cue-line {
+  width: 1px;
+  height: 60px;
+  background: var(--muted);
+  position: relative;
+  overflow: hidden;
+}
+.hero__scroll-cue-line::after {
+  content: "";
+  position: absolute;
+  top: -40%; left: 0;
+  width: 100%; height: 40%;
+  background: var(--ink);
+  animation: scroll-cue 2.2s ease-in-out infinite;
+}
+@keyframes scroll-cue {
+  0%   { transform: translateY(0);   opacity: 0; }
+  25%  { opacity: 1; }
+  100% { transform: translateY(260%); opacity: 0; }
+}
+
+/* Hero parallax — the .hero__inner shifts up slightly as you scroll past */
+.hero__inner {
+  will-change: transform;
+}
+
+/* Reveal-on-scroll */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+              transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Work-item: subtle zoom-in as it enters; preview image parallax */
+.work-item__preview img,
+.work-item__preview iframe {
+  will-change: transform;
+}
+.work-item[data-reveal] .work-item__preview img {
+  transform: scale(1.04);
+  transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.work-item[data-reveal].is-revealed .work-item__preview img {
+  transform: scale(1);
+}
+
+/* Section dim-on-scroll: only the current section is at full intensity */
+.section,
+.hero {
+  transition: opacity 0.6s ease;
+}
+
+/* Reduced motion: kill all animations */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress,
+  .marquee__track,
+  .hero__scroll-cue-line::after,
+  [data-reveal],
+  .work-item[data-reveal] .work-item__preview img {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  body.cursor-ready { cursor: auto; }
+  body.cursor-ready .cursor-ring,
+  body.cursor-ready .cursor-dot { display: none; }
+}
+
+/* Disable custom cursor / heavier effects on coarse pointers (touch) */
+@media (hover: none), (pointer: coarse) {
+  .cursor-ring, .cursor-dot { display: none; }
+  body.cursor-ready { cursor: auto; }
+  .section-marker { display: none; }
+  .hero__scroll-cue { display: none; }
 }
