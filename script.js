@@ -1,11 +1,10 @@
 // ============================================================
-// Cinematic UX layer — scroll progress, reveals, sticky section
+// Cinematic UX layer: scroll progress, reveals, sticky section
 // marker, custom cursor, hero parallax. All respect
 // prefers-reduced-motion and coarse-pointer devices.
 // ============================================================
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 // ---------- Nav: mobile toggle + scroll-spy --------------------------------
 const nav = document.querySelector('.nav');
@@ -151,38 +150,6 @@ if (previews.length && !reduceMotion) {
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-}
-
-// ---------- Custom cursor --------------------------------------------------
-if (finePointer && !reduceMotion) {
-  const ring = document.querySelector('.cursor-ring');
-  const dot = document.querySelector('.cursor-dot');
-  if (ring && dot) {
-    document.body.classList.add('cursor-ready');
-    let x = window.innerWidth / 2, y = window.innerHeight / 2;
-    let rx = x, ry = y;
-    const speed = 0.18;
-    const step = () => {
-      rx += (x - rx) * speed;
-      ry += (y - ry) * speed;
-      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-      dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-      requestAnimationFrame(step);
-    };
-    window.addEventListener('mousemove', (e) => { x = e.clientX; y = e.clientY; });
-    window.addEventListener('mouseleave', () => document.body.classList.remove('cursor-ready'));
-    window.addEventListener('mouseenter', () => document.body.classList.add('cursor-ready'));
-
-    // Magnet on interactive elements
-    const hoverables = 'a, button, .work-item, .capability, .work-item__preview';
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.closest(hoverables)) document.body.classList.add('cursor-hover');
-    });
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.closest(hoverables)) document.body.classList.remove('cursor-hover');
-    });
-    step();
-  }
 }
 
 // ---------- Footer year ----------------------------------------------------

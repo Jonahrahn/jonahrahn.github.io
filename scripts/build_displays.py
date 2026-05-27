@@ -63,7 +63,7 @@ def new_fig():
 
 
 def draw_meta(fig, num, tag):
-    """Top-left meta line: '§ 0X — TAG'."""
+    """Top-left meta line: '§ 0X   TAG'."""
     fig.text(
         0.06,
         0.93,
@@ -165,7 +165,7 @@ def fig_02_charity_nn():
 # ----------------------------------------------------------------------------- 03 (Tableau is live, but generate a static fallback)
 def fig_03_citi_bike():
     fig = new_fig()
-    draw_meta(fig, "03", "CITI BIKE — NYC")
+    draw_meta(fig, "03", "CITI BIKE · NYC")
     hairline(fig, 0.91)
     fig.text(0.06, 0.84, "Peak Hours", fontproperties=INTER, fontsize=34, color=INK, weight="bold")
     fig.text(0.06, 0.79, "Trips by start hour, NYC August 2018  ·  9-to-5 commuter shape", fontproperties=INTER, fontsize=15, color=MUTED)
@@ -250,7 +250,7 @@ def fig_05_amazon_vine():
     draw_meta(fig, "05", "AMAZON REVIEW BIAS ANALYSIS")
     hairline(fig, 0.91)
     fig.text(0.06, 0.84, "Vine Reviewers vs Public", fontproperties=INTER, fontsize=34, color=INK, weight="bold")
-    fig.text(0.06, 0.79, "Automotive category — paid Vine reviewers are 0.33% of the corpus", fontproperties=INTER, fontsize=15, color=MUTED)
+    fig.text(0.06, 0.79, "Automotive category. Paid Vine reviewers are 0.33% of the corpus", fontproperties=INTER, fontsize=15, color=MUTED)
 
     # Proportion bar
     total = 24824
@@ -278,7 +278,7 @@ def fig_05_amazon_vine():
 
     # Big callout below
     fig.text(0.06, 0.34, "0.33%", fontproperties=INTER, fontsize=110, color=ACCENT, weight="bold", linespacing=0.85)
-    fig.text(0.06, 0.21, "OF THE CORPUS WAS PAID — A SMALL BUT NON-TRIVIAL SLICE TO AUDIT FOR BIAS",
+    fig.text(0.06, 0.21, "OF THE CORPUS WAS PAID. A SMALL BUT NON-TRIVIAL SLICE TO AUDIT FOR BIAS",
              fontproperties=INTER, fontsize=16, color=INK)
 
     fig.text(0.06, 0.04, "SOURCE  ·  AMAZON VINE PROGRAM, AUTOMOTIVE CATEGORY", fontproperties=MONO, fontsize=11, color=MUTED)
@@ -291,7 +291,7 @@ def fig_06_pyber():
     draw_meta(fig, "06", "RIDE-SHARE ANALYTICS")
     hairline(fig, 0.91)
     fig.text(0.06, 0.84, "Total Fare by City Type", fontproperties=INTER, fontsize=34, color=INK, weight="bold")
-    fig.text(0.06, 0.79, "Weekly fares Jan–Apr 2019  ·  urban dominates, rural barely registers", fontproperties=INTER, fontsize=15, color=MUTED)
+    fig.text(0.06, 0.79, "Weekly fares Jan to Apr 2019  ·  urban dominates, rural barely registers", fontproperties=INTER, fontsize=15, color=MUTED)
 
     weeks_str = [
         "2019-01-06","2019-01-13","2019-01-20","2019-01-27",

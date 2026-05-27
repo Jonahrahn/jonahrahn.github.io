@@ -1,5 +1,5 @@
 /* =========================================================
-   Jonah Rahn — Editorial Brutalist
+   Jonah Rahn · Editorial Brutalist
    ========================================================= */
 
 :root {
@@ -479,7 +479,7 @@ button { font: inherit; cursor: pointer; }
 }
 
 /* =========================================================
-   CINEMATIC LAYER — scroll progress, reveals, marker,
+   CINEMATIC LAYER: scroll progress, reveals, marker,
    cursor, marquee, parallax. Gated on reduced-motion.
    ========================================================= */
 
@@ -525,46 +525,6 @@ button { font: inherit; cursor: pointer; }
 }
 .section-marker__num { color: var(--accent); font-weight: 500; }
 .section-marker__title { color: var(--ink); font-weight: 500; }
-
-/* Custom cursor (desktop only, fine pointer) */
-.cursor-ring,
-.cursor-dot {
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 100;
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
-  will-change: transform;
-}
-.cursor-ring {
-  width: 28px;
-  height: 28px;
-  border: 1px solid var(--ink);
-  transform: translate(-50%, -50%);
-}
-.cursor-dot {
-  width: 4px;
-  height: 4px;
-  background: var(--ink);
-  transform: translate(-50%, -50%);
-}
-body.cursor-ready .cursor-ring,
-body.cursor-ready .cursor-dot { opacity: 1; }
-body.cursor-hover .cursor-ring {
-  width: 56px;
-  height: 56px;
-  border-color: var(--accent);
-}
-body.cursor-hover .cursor-dot {
-  background: var(--accent);
-}
-body.cursor-ready { cursor: none; }
-body.cursor-ready a,
-body.cursor-ready button,
-body.cursor-ready input,
-body.cursor-ready textarea { cursor: none; }
 
 /* Marquee */
 .marquee {
@@ -637,7 +597,7 @@ body.cursor-ready textarea { cursor: none; }
   100% { transform: translateY(260%); opacity: 0; }
 }
 
-/* Hero parallax — the .hero__inner shifts up slightly as you scroll past */
+/* Hero parallax: the .hero__inner shifts up slightly as you scroll past */
 .hero__inner {
   will-change: transform;
 }
@@ -686,15 +646,10 @@ body.cursor-ready textarea { cursor: none; }
     transform: none !important;
     opacity: 1 !important;
   }
-  body.cursor-ready { cursor: auto; }
-  body.cursor-ready .cursor-ring,
-  body.cursor-ready .cursor-dot { display: none; }
 }
 
-/* Disable custom cursor / heavier effects on coarse pointers (touch) */
+/* Hide heavier ornament on coarse pointers (touch) */
 @media (hover: none), (pointer: coarse) {
-  .cursor-ring, .cursor-dot { display: none; }
-  body.cursor-ready { cursor: auto; }
   .section-marker { display: none; }
   .hero__scroll-cue { display: none; }
 }

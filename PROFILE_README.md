@@ -1,13 +1,13 @@
 <!--
   ─────────────────────────────────────────────────────────────
-  Profile README — for github.com/Jonahrahn/Jonahrahn
+  Profile README for github.com/Jonahrahn/Jonahrahn
   Paste this file's contents into Jonahrahn/Jonahrahn/README.md
   ─────────────────────────────────────────────────────────────
 -->
 
 ## Jonah Rahn
 
-**Engineering Linguist** — Santa Cruz, CA.
+**Engineering Linguist** · Santa Cruz, CA.
 Bridging human language and machine intelligence.
 B.A. Linguistics, UC Santa Cruz · ML model optimization @ LinkedIn.
 
@@ -17,9 +17,9 @@ B.A. Linguistics, UC Santa Cruz · ML model optimization @ LinkedIn.
 
 ### What I work on
 
-- **Data & Analysis** — Python, SQL, R, JavaScript, AWS, Spark, Tableau
-- **Computational Linguistics** — Syntax, semantics, phonetics (Praat), annotation
-- **Machine Learning** — TensorFlow, Keras, PyTorch, NLP, deep & reinforcement learning
+- **Data & Analysis** · Python, SQL, R, JavaScript, AWS, Spark, Tableau
+- **Computational Linguistics** · Syntax, semantics, phonetics (Praat), annotation
+- **Machine Learning** · TensorFlow, Keras, PyTorch, NLP, deep & reinforcement learning
 
 ---
 
