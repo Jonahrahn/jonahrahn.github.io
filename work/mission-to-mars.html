@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mission to Mars · Jonah Rahn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An end-to-end aggregator pulling Mars-mission data into a single Flask-served page.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta property="og:title" content="Mission to Mars · Jonah Rahn">
+  <meta property="og:description" content="An end-to-end aggregator pulling Mars-mission data into a single Flask-served page.">
+  <meta property="og:image" content="https://jonahrahn.github.io/images/og/mission-to-mars.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://jonahrahn.github.io/images/og/mission-to-mars.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="case-body">
+
+  <header class="nav" id="top">
+    <a class="nav__brand" href="../">Jonah Rahn</a>
+    <nav class="nav__links">
+      <a href="../#about">About</a>
+      <a href="../#capabilities">Capabilities</a>
+      <a href="../#work">Selected Work</a>
+      <a href="../#contact">Contact</a>
+      <a class="nav__resume" href="../resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">Menu</button>
+  </header>
+
+  <section class="case-hero">
+    <div class="case-hero__inner">
+      <p class="case-hero__crumb">
+        <a href="../">Index</a>  <span>/</span>  <a href="../#work">Work</a>  <span>/</span>  <span>Mission to Mars</span>
+      </p>
+      <p class="case-meta__strip">§ 04  ·  2021  ·  Full-stack developer  ·  Python · Splinter · BeautifulSoup · Flask · MongoDB</p>
+      <h1 class="case-hero__title">Mission to Mars</h1>
+      <p class="case-hero__tagline">An end-to-end aggregator pulling Mars-mission data into a single Flask-served page.</p>
+      <div class="case-hero__cta">
+        <a class="btn" href="https://nbviewer.org/github/Jonahrahn/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
+        <a class="btn btn--ghost" href="https://github.com/Jonahrahn/Mission-to-Mars" target="_blank" rel="noopener">View code on GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-body-wrap">
+    <figure class="case__figure">
+      <img src="../images/projects/04-mission-to-mars.png" alt="Composition of the data the Mission to Mars app aggregates: news headline, hemispheres, and Mars facts">
+      <figcaption>Fig. 01  ·  What the app aggregates: news, hemispheres, facts</figcaption>
+    </figure>
+
+    <article class="case__article">
+      <section class="case__section">
+        <h2><span class="case__section-num">01</span> Problem</h2>
+        <p>Mars-mission information is spread across NASA news, image archives, hemisphere photo pages, and reference tables. The brief: pull it together into a single page that refreshes on demand.</p>
+      </section>
+
+      <aside class="case__pull">
+        <em>An end-to-end exercise in pulling scattered sources into one pane.</em>
+      </aside>
+
+      <section class="case__section">
+        <h2><span class="case__section-num">02</span> Approach</h2>
+        <p>Wrote a Python scraper using Splinter for browser-driven pages and BeautifulSoup for static parsing. Persisted the most recent scrape to MongoDB; rendered the result through a Flask app with a Bootstrap front end.</p>
+      </section>
+
+      <section class="case__section">
+        <h2><span class="case__section-num">03</span> Result</h2>
+        <p>A working aggregator that scrapes on demand and persists to Mongo, useful as an end-to-end exercise spanning scraping, storage, and presentation across the full stack.</p>
+      </section>
+
+      <section class="case__cta">
+        <a class="btn" href="https://nbviewer.org/github/Jonahrahn/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
+        <a class="btn btn--ghost" href="https://github.com/Jonahrahn/Mission-to-Mars" target="_blank" rel="noopener">View code on GitHub ↗</a>
+      </section>
+    </article>
+  </section>
+
+  <nav class="case-nav">
+    <a class="case-nav__prev" href="charity-nn.html">
+      <span class="case-nav__label">← Previous</span>
+      <span class="case-nav__title">Neural Network Charity Analysis</span>
+    </a>
+    <a class="case-nav__next" href="amazon-vine.html">
+      <span class="case-nav__label">Next →</span>
+      <span class="case-nav__title">Amazon Review Bias Analysis</span>
+    </a>
+  </nav>
+
+  <footer class="footer">
+    <div class="footer__row">
+      <span>© <span id="year">2026</span> Jonah Rahn</span>
+      <span>Santa Cruz, California</span>
+      <a href="../#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

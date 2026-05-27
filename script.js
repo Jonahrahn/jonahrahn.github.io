@@ -1,11 +1,10 @@
 // ============================================================
-// Cinematic UX layer — scroll progress, reveals, sticky section
+// Cinematic UX layer: scroll progress, reveals, sticky section
 // marker, custom cursor, hero parallax. All respect
 // prefers-reduced-motion and coarse-pointer devices.
 // ============================================================
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 // ---------- Nav: mobile toggle + scroll-spy --------------------------------
 const nav = document.querySelector('.nav');
@@ -30,17 +29,6 @@ document.querySelectorAll('.nav__links a').forEach((link) => {
 
 const sections = Array.from(document.querySelectorAll('section[id]'));
 const navLinks = document.querySelectorAll('.nav__links a');
-const marker = document.querySelector('.section-marker');
-const markerNum = marker?.querySelector('.section-marker__num');
-const markerTitle = marker?.querySelector('.section-marker__title');
-
-const SECTION_META = {
-  home:         { num: '§ 00', title: 'Index' },
-  about:        { num: '§ 01', title: 'About' },
-  capabilities: { num: '§ 02', title: 'Capabilities' },
-  work:         { num: '§ 03', title: 'Selected Work' },
-  contact:      { num: '§ 04', title: 'Contact' },
-};
 
 const spy = new IntersectionObserver(
   (entries) => {
@@ -50,12 +38,6 @@ const spy = new IntersectionObserver(
       navLinks.forEach((l) => {
         l.classList.toggle('is-active', l.getAttribute('href') === `#${id}`);
       });
-      const meta = SECTION_META[id];
-      if (meta && marker) {
-        markerNum.textContent = meta.num;
-        markerTitle.textContent = meta.title;
-        marker.classList.toggle('is-visible', id !== 'home');
-      }
     });
   },
   { rootMargin: '-45% 0px -50% 0px' }
@@ -107,7 +89,7 @@ if (reduceMotion) {
 }
 
 // ---------- Hero parallax --------------------------------------------------
-const heroInner = document.querySelector('.hero__inner');
+const heroInner = document.querySelector('.hero__grid');
 if (heroInner && !reduceMotion) {
   let ticking = false;
   const onScroll = () => {
@@ -153,36 +135,48 @@ if (previews.length && !reduceMotion) {
   onScroll();
 }
 
-// ---------- Custom cursor --------------------------------------------------
-if (finePointer && !reduceMotion) {
-  const ring = document.querySelector('.cursor-ring');
-  const dot = document.querySelector('.cursor-dot');
-  if (ring && dot) {
-    document.body.classList.add('cursor-ready');
-    let x = window.innerWidth / 2, y = window.innerHeight / 2;
-    let rx = x, ry = y;
-    const speed = 0.18;
-    const step = () => {
-      rx += (x - rx) * speed;
-      ry += (y - ry) * speed;
-      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-      dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-      requestAnimationFrame(step);
-    };
-    window.addEventListener('mousemove', (e) => { x = e.clientX; y = e.clientY; });
-    window.addEventListener('mouseleave', () => document.body.classList.remove('cursor-ready'));
-    window.addEventListener('mouseenter', () => document.body.classList.add('cursor-ready'));
+// ---------- View Transitions: smooth crossfade between same-origin links ---
+if (document.startViewTransition && !reduceMotion) {
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    if (a.target === '_blank') return;
+    if (a.hasAttribute('download')) return;
+    const href = a.getAttribute('href');
+    if (!href) return;
+    if (href.startsWith('#')) return;          // anchors stay native
+    if (href.startsWith('http')) {
+      const url = new URL(href);
+      if (url.origin !== location.origin) return;
+    }
+    e.preventDefault();
+    document.startViewTransition(() => {
+      window.location.href = a.href;
+    });
+  });
+}
 
-    // Magnet on interactive elements
-    const hoverables = 'a, button, .work-item, .capability, .work-item__preview';
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.closest(hoverables)) document.body.classList.add('cursor-hover');
-    });
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.closest(hoverables)) document.body.classList.remove('cursor-hover');
-    });
-    step();
-  }
+// ---------- Subtle cursor accent: tiny lagging dot (no replacement) -------
+if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const dot = document.createElement('div');
+  dot.className = 'cursor-accent';
+  dot.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(dot);
+  let x = -100, y = -100, cx = x, cy = y;
+  window.addEventListener('mousemove', (e) => { x = e.clientX; y = e.clientY; });
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest('a, button, .work-item, .capability')) dot.classList.add('is-hover');
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest('a, button, .work-item, .capability')) dot.classList.remove('is-hover');
+  });
+  const step = () => {
+    cx += (x - cx) * 0.22;
+    cy += (y - cy) * 0.22;
+    dot.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+    requestAnimationFrame(step);
+  };
+  step();
 }
 
 // ---------- Footer year ----------------------------------------------------

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Amazon Review Bias Analysis · Jonah Rahn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Does Amazon's paid Vine reviewer program produce measurably different ratings than the public?">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta property="og:title" content="Amazon Review Bias Analysis · Jonah Rahn">
+  <meta property="og:description" content="Does Amazon's paid Vine reviewer program produce measurably different ratings than the public?">
+  <meta property="og:image" content="https://jonahrahn.github.io/images/og/amazon-vine.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://jonahrahn.github.io/images/og/amazon-vine.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="case-body">
+
+  <header class="nav" id="top">
+    <a class="nav__brand" href="../">Jonah Rahn</a>
+    <nav class="nav__links">
+      <a href="../#about">About</a>
+      <a href="../#capabilities">Capabilities</a>
+      <a href="../#work">Selected Work</a>
+      <a href="../#contact">Contact</a>
+      <a class="nav__resume" href="../resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">Menu</button>
+  </header>
+
+  <section class="case-hero">
+    <div class="case-hero__inner">
+      <p class="case-hero__crumb">
+        <a href="../">Index</a>  <span>/</span>  <a href="../#work">Work</a>  <span>/</span>  <span>Amazon Review Bias Analysis</span>
+      </p>
+      <p class="case-meta__strip">§ 05  ·  2022  ·  Data analyst  ·  Python · PySpark · PostgreSQL · Pandas</p>
+      <h1 class="case-hero__title">Amazon Review Bias Analysis</h1>
+      <p class="case-hero__tagline">Does Amazon's paid Vine reviewer program produce measurably different ratings than the public?</p>
+      <div class="case-hero__cta">
+        <a class="btn" href="https://nbviewer.org/github/Jonahrahn/Amazon_Vine_Analysis/blob/main/Vine_Reviews_ETL.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
+        <a class="btn btn--ghost" href="https://github.com/Jonahrahn/Amazon_Vine_Analysis" target="_blank" rel="noopener">View code on GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-body-wrap">
+    <figure class="case__figure">
+      <img src="../images/projects/05-amazon-vine.png" alt="Proportion bar: 82 paid Vine reviews vs 24,742 unpaid public reviews in the automotive category">
+      <figcaption>Fig. 01  ·  Paid Vine reviews vs unpaid public reviews, automotive category</figcaption>
+    </figure>
+
+    <article class="case__article">
+      <section class="case__section">
+        <h2><span class="case__section-num">01</span> Problem</h2>
+        <p>Amazon's Vine program gives selected reviewers free products in exchange for feedback. The question: do those paid reviewers rate products differently than the unpaid public, in ways that could bias purchase decisions?</p>
+      </section>
+
+      <aside class="case__pull">
+        <em>Vine reviewers are 0.33% of the corpus. That's the headline.</em>
+      </aside>
+
+      <section class="case__section">
+        <h2><span class="case__section-num">02</span> Approach</h2>
+        <p>ETL over the full Amazon automotive review dataset using PySpark, landing the cleaned table in PostgreSQL. Filtered for sufficient vote counts, then split into Vine and non-Vine populations and compared their rating distributions.</p>
+      </section>
+
+      <section class="case__section">
+        <h2><span class="case__section-num">03</span> Result</h2>
+        <p>Only 0.33 percent of qualifying reviews were paid (82 of 24,824). That is a small enough slice that even a real bias effect would be hard to detect confidently; useful as a baseline for further category-by-category audits.</p>
+      </section>
+
+      <section class="case__cta">
+        <a class="btn" href="https://nbviewer.org/github/Jonahrahn/Amazon_Vine_Analysis/blob/main/Vine_Reviews_ETL.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
+        <a class="btn btn--ghost" href="https://github.com/Jonahrahn/Amazon_Vine_Analysis" target="_blank" rel="noopener">View code on GitHub ↗</a>
+      </section>
+    </article>
+  </section>
+
+  <nav class="case-nav">
+    <a class="case-nav__prev" href="mission-to-mars.html">
+      <span class="case-nav__label">← Previous</span>
+      <span class="case-nav__title">Mission to Mars</span>
+    </a>
+    <a class="case-nav__next" href="pyber.html">
+      <span class="case-nav__label">Next →</span>
+      <span class="case-nav__title">Ride-Share Analytics</span>
+    </a>
+  </nav>
+
+  <footer class="footer">
+    <div class="footer__row">
+      <span>© <span id="year">2026</span> Jonah Rahn</span>
+      <span>Santa Cruz, California</span>
+      <a href="../#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
