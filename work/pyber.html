@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ride-Share Analytics · Jonah Rahn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Where does a ride-share company actually make its money? A four-month look across city types.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta property="og:title" content="Ride-Share Analytics · Jonah Rahn">
+  <meta property="og:description" content="Where does a ride-share company actually make its money? A four-month look across city types.">
+  <meta property="og:image" content="https://jonahrahn.github.io/images/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="case-body">
+
+  <header class="nav" id="top">
+    <a class="nav__brand" href="../">Jonah Rahn</a>
+    <nav class="nav__links">
+      <a href="../#about">About</a>
+      <a href="../#capabilities">Capabilities</a>
+      <a href="../#work">Selected Work</a>
+      <a href="../#contact">Contact</a>
+      <a class="nav__resume" href="../resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">Menu</button>
+  </header>
+
+  <section class="case-hero">
+    <div class="case-hero__inner">
+      <p class="case-hero__crumb">
+        <a href="../">Index</a>  <span>/</span>  <a href="../#work">Work</a>  <span>/</span>  <span>Ride-Share Analytics</span>
+      </p>
+      <p class="eyebrow">§ 06  ·  Python · Pandas · Matplotlib</p>
+      <h1 class="case-hero__title">Ride-Share Analytics</h1>
+      <p class="case-hero__tagline">Where does a ride-share company actually make its money? A four-month look across city types.</p>
+    </div>
+  </section>
+
+  <section class="case">
+    <aside class="case__meta">
+      <dl>
+        <div><dt>Year</dt><dd>2021</dd></div>
+        <div><dt>Role</dt><dd>Data analyst</dd></div>
+        <div><dt>Stack</dt><dd>Python · Pandas · Matplotlib</dd></div>
+        <div><dt>Live</dt><dd><a href="https://nbviewer.org/github/Jonahrahn/PyBer_Analysis/blob/main/PyBer_Challenge.ipynb" target="_blank" rel="noopener">View notebook ↗</a></dd></div>
+        <div><dt>Code</dt><dd><a href="https://github.com/Jonahrahn/PyBer_Analysis" target="_blank" rel="noopener">View code on GitHub ↗</a></dd></div>
+      </dl>
+    </aside>
+
+    <div class="case__body">
+      <figure class="case__figure">
+        <img src="../images/projects/06-pyber.png" alt="Weekly total fare by city type, January through April: urban dominates, suburban steady, rural minimal">
+      </figure>
+
+      <article class="case__article">
+        <section class="case__section">
+          <h2><span class="case__section-num">01</span> Problem</h2>
+          <p>A hypothetical ride-share company wanted to understand how its January through April 2019 revenue split across urban, suburban, and rural city types, to inform resource allocation.</p>
+        </section>
+        <section class="case__section">
+          <h2><span class="case__section-num">02</span> Approach</h2>
+          <p>Aggregated the trip and fare data by city type and week using Pandas, then produced comparative line charts in Matplotlib showing weekly total fares across the three segments over the four-month window.</p>
+        </section>
+        <section class="case__section">
+          <h2><span class="case__section-num">03</span> Result</h2>
+          <p>Urban accounted for $2,000 to $2,500 in weekly fares, suburban held steady around $1,000, rural barely reached $500. The urban segment is where incremental investment pays off; rural is a thin tail worth keeping but not chasing.</p>
+        </section>
+        <section class="case__cta">
+          <a class="btn" href="https://nbviewer.org/github/Jonahrahn/PyBer_Analysis/blob/main/PyBer_Challenge.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
+          <a class="btn btn--ghost" href="https://github.com/Jonahrahn/PyBer_Analysis" target="_blank" rel="noopener">View code on GitHub ↗</a>
+        </section>
+      </article>
+    </div>
+  </section>
+
+  <nav class="case-nav">
+    <a class="case-nav__prev" href="amazon-vine.html">
+      <span class="case-nav__label">← Previous</span>
+      <span class="case-nav__title">Amazon Review Bias Analysis</span>
+    </a>
+    <a class="case-nav__next" href="../">
+      <span class="case-nav__label">Next →</span>
+      <span class="case-nav__title">Back to portfolio</span>
+    </a>
+  </nav>
+
+  <footer class="footer">
+    <div class="footer__row">
+      <span>© <span id="year">2026</span> Jonah Rahn</span>
+      <span>Santa Cruz, California</span>
+      <a href="../#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

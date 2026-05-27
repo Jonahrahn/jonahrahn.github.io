@@ -38,7 +38,8 @@ const SECTION_META = {
   about:        { num: '§ 01', title: 'About' },
   capabilities: { num: '§ 02', title: 'Capabilities' },
   work:         { num: '§ 03', title: 'Selected Work' },
-  contact:      { num: '§ 04', title: 'Contact' },
+  earlier:      { num: '§ 04', title: 'Earlier Projects' },
+  contact:      { num: '§ 05', title: 'Contact' },
 };
 
 const spy = new IntersectionObserver(

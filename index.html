@@ -4,7 +4,28 @@
   <title>Jonah Rahn · Engineering Linguist</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jonah Rahn · Engineering Linguist. Linguistics, machine learning, and data work.">
+  <meta name="description" content="Jonah Rahn, Engineering Linguist. Bridging human language and machine intelligence through linguistics, machine learning, and data work.">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jonah Rahn · Engineering Linguist">
+  <meta property="og:description" content="Bridging human language and machine intelligence. Linguistics, machine learning, and data work.">
+  <meta property="og:image" content="https://jonahrahn.github.io/images/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://jonahrahn.github.io/">
+  <meta property="og:site_name" content="Jonah Rahn">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jonah Rahn · Engineering Linguist">
+  <meta name="twitter:description" content="Bridging human language and machine intelligence. Linguistics, machine learning, and data work.">
+  <meta name="twitter:image" content="https://jonahrahn.github.io/images/og-card.png">
+
+  <meta name="theme-color" content="#fafaf7">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -24,6 +45,7 @@
       <a href="#capabilities">Capabilities</a>
       <a href="#work">Selected Work</a>
       <a href="#contact">Contact</a>
+      <a class="nav__resume" href="resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
     </nav>
     <button class="nav__toggle" aria-label="Menu" aria-expanded="false">Menu</button>
   </header>
@@ -37,8 +59,8 @@
         and optimizing the linguistic backbone of ML systems.
       </p>
       <div class="hero__actions" data-reveal data-reveal-delay="260">
-        <a href="#work" class="btn">View selected work</a>
-        <a href="#contact" class="btn btn--ghost">Get in touch</a>
+        <a href="#work" class="btn">See recent work</a>
+        <a href="#contact" class="btn btn--ghost">Say hello</a>
       </div>
     </div>
     <div class="hero__scroll-cue" aria-hidden="true">
@@ -47,34 +69,6 @@
     </div>
   </section>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>Python</span><span class="marquee__dot">·</span>
-      <span>SQL</span><span class="marquee__dot">·</span>
-      <span>TensorFlow</span><span class="marquee__dot">·</span>
-      <span>Keras</span><span class="marquee__dot">·</span>
-      <span>PyTorch</span><span class="marquee__dot">·</span>
-      <span>NLP</span><span class="marquee__dot">·</span>
-      <span>Computational Linguistics</span><span class="marquee__dot">·</span>
-      <span>Phonetics</span><span class="marquee__dot">·</span>
-      <span>Annotation</span><span class="marquee__dot">·</span>
-      <span>AWS</span><span class="marquee__dot">·</span>
-      <span>Spark</span><span class="marquee__dot">·</span>
-      <span>Tableau</span><span class="marquee__dot">·</span>
-      <span>Python</span><span class="marquee__dot">·</span>
-      <span>SQL</span><span class="marquee__dot">·</span>
-      <span>TensorFlow</span><span class="marquee__dot">·</span>
-      <span>Keras</span><span class="marquee__dot">·</span>
-      <span>PyTorch</span><span class="marquee__dot">·</span>
-      <span>NLP</span><span class="marquee__dot">·</span>
-      <span>Computational Linguistics</span><span class="marquee__dot">·</span>
-      <span>Phonetics</span><span class="marquee__dot">·</span>
-      <span>Annotation</span><span class="marquee__dot">·</span>
-      <span>AWS</span><span class="marquee__dot">·</span>
-      <span>Spark</span><span class="marquee__dot">·</span>
-      <span>Tableau</span><span class="marquee__dot">·</span>
-    </div>
-  </div>
 
   <section class="section" id="about">
     <header class="section__head" data-reveal>
@@ -83,19 +77,18 @@
     </header>
     <div class="about">
       <figure class="about__figure" data-reveal>
-        <img src="images/about.jpeg" alt="Portrait of Jonah Rahn">
+        <img src="images/about-portrait.jpeg" alt="Portrait of Jonah Rahn">
       </figure>
       <div class="about__body" data-reveal data-reveal-delay="120">
         <p class="about__lead">
-          Linguistics graduate from UC Santa Cruz, currently working at LinkedIn
-          on machine learning model optimization and language data quality.
+          Engineering Linguist at LinkedIn. I work at the intersection of
+          computational linguistics and applied machine learning.
         </p>
         <p>
-          My work sits at the intersection of computational linguistics and applied
-          ML: from annotation guidelines and dataset hygiene to evaluation,
-          feature engineering, and model iteration. I care about getting the
-          unglamorous parts right so the systems built on top of them behave
-          predictably and fairly.
+          My focus is the unglamorous backbone of ML systems: annotation design,
+          dataset hygiene, evaluation, and the iteration loop that turns a
+          fragile model into a dependable one. Linguistics gives me a vocabulary
+          for the problems machine learning quietly inherits from human language.
         </p>
         <dl class="about__data">
           <div><dt>Company</dt><dd>LinkedIn</dd></div>
@@ -116,15 +109,18 @@
     <div class="capabilities">
       <article class="capability" data-reveal data-reveal-delay="60">
         <h3>Data &amp; Analysis</h3>
-        <p>Python, SQL, R, JavaScript. AWS, Spark, Big Data pipelines. Tableau and Flask for surfacing results. Comfortable owning a dataset end-to-end.</p>
+        <p>I own datasets end-to-end, from extraction and cleaning through analysis and visualization.</p>
+        <p class="capability__tools">Python · SQL · R · AWS · Spark · Tableau</p>
       </article>
       <article class="capability" data-reveal data-reveal-delay="160">
         <h3>Computational Linguistics</h3>
-        <p>Syntax, semantics, phonetics (Praat), phonology, and annotation. Translation, language data processing, and evaluation framework design.</p>
+        <p>I design annotation schemes and evaluation frameworks that make language data legible to ML systems.</p>
+        <p class="capability__tools">Praat · Syntax · Semantics · Phonology · Translation</p>
       </article>
       <article class="capability" data-reveal data-reveal-delay="260">
         <h3>Machine Learning</h3>
-        <p>TensorFlow, Keras, PyTorch. Neural networks, NLP, deep and reinforcement learning. Model evaluation and iteration alongside data quality work.</p>
+        <p>I build, evaluate, and iterate on models, with a focus on the data quality that decides whether they work.</p>
+        <p class="capability__tools">TensorFlow · Keras · PyTorch · NLP · Deep Learning</p>
       </article>
     </div>
   </section>
@@ -136,48 +132,6 @@
     </header>
     <ul class="work-list">
       <li class="work-item" data-reveal>
-        <figure class="work-item__preview">
-          <img src="images/projects/01-mental-health.png" alt="Feature importance chart from the mental health risk model" loading="lazy">
-        </figure>
-        <div class="work-item__content">
-          <div class="work-item__meta">
-            <span class="work-item__num">01</span>
-            <span class="work-item__tag">Machine Learning · Python</span>
-          </div>
-          <h3 class="work-item__title">
-            <a href="https://nbviewer.org/github/Jonahrahn/Mental_Health_Predictor/blob/main/MachineLearning_Shallow_and_Deep.ipynb" target="_blank" rel="noopener">
-              Mental Health Risk Predictor <span class="work-item__arrow" aria-hidden="true">→</span>
-            </a>
-          </h3>
-          <p class="work-item__desc">Machine learning model predicting mental health risk factors from socioeconomic and environmental signals. Preprocessing, feature engineering, model selection, evaluation.</p>
-          <div class="work-item__actions">
-            <a class="work-item__action work-item__action--live" href="https://nbviewer.org/github/Jonahrahn/Mental_Health_Predictor/blob/main/MachineLearning_Shallow_and_Deep.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
-            <a class="work-item__action work-item__action--code" href="https://github.com/Jonahrahn/Mental_Health_Predictor" target="_blank" rel="noopener">View code ↗</a>
-          </div>
-        </div>
-      </li>
-      <li class="work-item work-item--reverse" data-reveal>
-        <figure class="work-item__preview">
-          <img src="images/projects/02-charity-nn.png" alt="Optimized neural network accuracy reaching 79%, exceeding the 75% target threshold" loading="lazy">
-        </figure>
-        <div class="work-item__content">
-          <div class="work-item__meta">
-            <span class="work-item__num">02</span>
-            <span class="work-item__tag">TensorFlow · Keras</span>
-          </div>
-          <h3 class="work-item__title">
-            <a href="https://nbviewer.org/github/Jonahrahn/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity-Optimization.ipynb" target="_blank" rel="noopener">
-              Neural Network Charity Analysis <span class="work-item__arrow" aria-hidden="true">→</span>
-            </a>
-          </h3>
-          <p class="work-item__desc">Neural network model analyzing success rates of charity campaigns: preprocessing, architecture iteration, and evaluation reaching 79% accuracy on the optimized run.</p>
-          <div class="work-item__actions">
-            <a class="work-item__action work-item__action--live" href="https://nbviewer.org/github/Jonahrahn/Neural_Network_Charity_Analysis/blob/main/AlphabetSoupCharity-Optimization.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
-            <a class="work-item__action work-item__action--code" href="https://github.com/Jonahrahn/Neural_Network_Charity_Analysis" target="_blank" rel="noopener">View code ↗</a>
-          </div>
-        </div>
-      </li>
-      <li class="work-item" data-reveal>
         <figure class="work-item__preview work-item__preview--embed">
           <iframe
             src="https://public.tableau.com/views/NYCBIke/NYCCitiBike?:embed=y&:display_count=no&:showVizHome=no&:toolbar=no&:tabs=no"
@@ -187,90 +141,102 @@
         </figure>
         <div class="work-item__content">
           <div class="work-item__meta">
-            <span class="work-item__num">03</span>
+            <span class="work-item__num">01</span>
             <span class="work-item__tag">Tableau · Data Visualization</span>
           </div>
           <h3 class="work-item__title">
-            <a href="https://public.tableau.com/app/profile/jonah.rahn/viz/NYCBIke/NYCCitiBike" target="_blank" rel="noopener">
+            <a href="work/citi-bike.html">
               Citi Bike Tableau Visualization <span class="work-item__arrow" aria-hidden="true">→</span>
             </a>
           </h3>
-          <p class="work-item__desc">Interactive Tableau dashboards exploring Citi Bike usage patterns and rider behavior: extraction, transformation, and storytelling across the full August 2018 NYC trip dataset.</p>
+          <p class="work-item__desc">Interactive Tableau dashboards exploring Citi Bike usage patterns and rider behavior across the full August 2018 NYC trip dataset. Live, published on Tableau Public.</p>
           <div class="work-item__actions">
-            <a class="work-item__action work-item__action--live" href="https://public.tableau.com/app/profile/jonah.rahn/viz/NYCBIke/NYCCitiBike" target="_blank" rel="noopener">Open in Tableau ↗</a>
-            <a class="work-item__action work-item__action--code" href="https://github.com/Jonahrahn/BikeSharing" target="_blank" rel="noopener">View code ↗</a>
+            <a class="work-item__action work-item__action--live" href="work/citi-bike.html">Read case study →</a>
+            <a class="work-item__action work-item__action--code" href="https://public.tableau.com/app/profile/jonah.rahn/viz/NYCBIke/NYCCitiBike" target="_blank" rel="noopener">Open in Tableau ↗</a>
           </div>
         </div>
       </li>
       <li class="work-item work-item--reverse" data-reveal>
         <figure class="work-item__preview">
-          <img src="images/projects/04-mission-to-mars.png" alt="Mission to Mars: the scraped news headline, hemispheres, and Mars facts table the app surfaces" loading="lazy">
+          <img src="images/projects/01-mental-health.png" alt="Feature importance chart from the mental health risk model" loading="lazy">
         </figure>
         <div class="work-item__content">
           <div class="work-item__meta">
-            <span class="work-item__num">04</span>
-            <span class="work-item__tag">Python · Flask · MongoDB</span>
+            <span class="work-item__num">02</span>
+            <span class="work-item__tag">Machine Learning · Python</span>
           </div>
           <h3 class="work-item__title">
-            <a href="https://nbviewer.org/github/Jonahrahn/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb" target="_blank" rel="noopener">
-              Mission to Mars <span class="work-item__arrow" aria-hidden="true">→</span>
+            <a href="work/mental-health.html">
+              Mental Health Risk Predictor <span class="work-item__arrow" aria-hidden="true">→</span>
             </a>
           </h3>
-          <p class="work-item__desc">Web-scraping app aggregating Mars-mission data across sources with Splinter and Beautiful Soup, served through a Flask + MongoDB stack with a Bootstrap-styled front end.</p>
+          <p class="work-item__desc">Predicting mental health risk factors from socioeconomic and environmental signals. Feature engineering surfaced income inequality, not income level, as the dominant predictor.</p>
           <div class="work-item__actions">
-            <a class="work-item__action work-item__action--live" href="https://nbviewer.org/github/Jonahrahn/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
-            <a class="work-item__action work-item__action--code" href="https://github.com/Jonahrahn/Mission-to-Mars" target="_blank" rel="noopener">View code ↗</a>
+            <a class="work-item__action work-item__action--live" href="work/mental-health.html">Read case study →</a>
+            <a class="work-item__action work-item__action--code" href="https://github.com/Jonahrahn/Mental_Health_Predictor" target="_blank" rel="noopener">View code ↗</a>
           </div>
         </div>
       </li>
       <li class="work-item" data-reveal>
         <figure class="work-item__preview">
-          <img src="images/projects/05-amazon-vine.png" alt="Vine paid reviewers are 0.33% of the automotive review corpus: 82 paid vs 24,742 unpaid" loading="lazy">
+          <img src="images/projects/02-charity-nn.png" alt="Optimized neural network accuracy reaching 79%, exceeding the 75% target threshold" loading="lazy">
         </figure>
         <div class="work-item__content">
           <div class="work-item__meta">
-            <span class="work-item__num">05</span>
-            <span class="work-item__tag">NLP · Bias Analysis</span>
+            <span class="work-item__num">03</span>
+            <span class="work-item__tag">TensorFlow · Keras</span>
           </div>
           <h3 class="work-item__title">
-            <a href="https://nbviewer.org/github/Jonahrahn/Amazon_Vine_Analysis/blob/main/Vine_Reviews_ETL.ipynb" target="_blank" rel="noopener">
-              Amazon Review Bias Analysis <span class="work-item__arrow" aria-hidden="true">→</span>
+            <a href="work/charity-nn.html">
+              Neural Network Charity Analysis <span class="work-item__arrow" aria-hidden="true">→</span>
             </a>
           </h3>
-          <p class="work-item__desc">Analysis of Amazon product reviews in the automotive category, comparing 82 paid Vine reviews against 24,742 unpaid reviews for indicators of reviewer bias.</p>
+          <p class="work-item__desc">Deep learning classifier predicting charity-campaign success. Architecture iteration plus targeted feature engineering pushed the optimized run past the 75% accuracy target to 79%.</p>
           <div class="work-item__actions">
-            <a class="work-item__action work-item__action--live" href="https://nbviewer.org/github/Jonahrahn/Amazon_Vine_Analysis/blob/main/Vine_Reviews_ETL.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
-            <a class="work-item__action work-item__action--code" href="https://github.com/Jonahrahn/Amazon_Vine_Analysis" target="_blank" rel="noopener">View code ↗</a>
-          </div>
-        </div>
-      </li>
-      <li class="work-item work-item--reverse" data-reveal>
-        <figure class="work-item__preview">
-          <img src="images/projects/06-pyber.png" alt="Weekly total fares Jan to Apr 2019: urban dominates, suburban steady, rural barely registers" loading="lazy">
-        </figure>
-        <div class="work-item__content">
-          <div class="work-item__meta">
-            <span class="work-item__num">06</span>
-            <span class="work-item__tag">Pandas · Matplotlib</span>
-          </div>
-          <h3 class="work-item__title">
-            <a href="https://nbviewer.org/github/Jonahrahn/PyBer_Analysis/blob/main/PyBer_Challenge.ipynb" target="_blank" rel="noopener">
-              Ride-Share Analytics <span class="work-item__arrow" aria-hidden="true">→</span>
-            </a>
-          </h3>
-          <p class="work-item__desc">Ride-share analytics modeled after Uber data: aggregating, segmenting, and visualizing trip and revenue patterns across urban, suburban, and rural city types.</p>
-          <div class="work-item__actions">
-            <a class="work-item__action work-item__action--live" href="https://nbviewer.org/github/Jonahrahn/PyBer_Analysis/blob/main/PyBer_Challenge.ipynb" target="_blank" rel="noopener">View notebook ↗</a>
-            <a class="work-item__action work-item__action--code" href="https://github.com/Jonahrahn/PyBer_Analysis" target="_blank" rel="noopener">View code ↗</a>
+            <a class="work-item__action work-item__action--live" href="work/charity-nn.html">Read case study →</a>
+            <a class="work-item__action work-item__action--code" href="https://github.com/Jonahrahn/Neural_Network_Charity_Analysis" target="_blank" rel="noopener">View code ↗</a>
           </div>
         </div>
       </li>
     </ul>
   </section>
 
-  <section class="section section--contact" id="contact">
+  <section class="section section--alt" id="earlier">
     <header class="section__head" data-reveal>
       <span class="section__num">04</span>
+      <h2 class="section__title">Earlier Projects</h2>
+    </header>
+    <ul class="earlier-list" data-reveal data-reveal-delay="100">
+      <li class="earlier-item">
+        <a class="earlier-item__link" href="work/mission-to-mars.html">
+          <span class="earlier-item__num">04</span>
+          <span class="earlier-item__title">Mission to Mars</span>
+          <span class="earlier-item__tag">Python · Flask · MongoDB</span>
+          <span class="earlier-item__arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="earlier-item">
+        <a class="earlier-item__link" href="work/amazon-vine.html">
+          <span class="earlier-item__num">05</span>
+          <span class="earlier-item__title">Amazon Review Bias Analysis</span>
+          <span class="earlier-item__tag">NLP · Bias Analysis</span>
+          <span class="earlier-item__arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="earlier-item">
+        <a class="earlier-item__link" href="work/pyber.html">
+          <span class="earlier-item__num">06</span>
+          <span class="earlier-item__title">Ride-Share Analytics</span>
+          <span class="earlier-item__tag">Pandas · Matplotlib</span>
+          <span class="earlier-item__arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section section--contact" id="contact">
+    <header class="section__head" data-reveal>
+      <span class="section__num">05</span>
       <h2 class="section__title">Contact</h2>
     </header>
     <div class="contact">
