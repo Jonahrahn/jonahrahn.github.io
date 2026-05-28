@@ -492,7 +492,7 @@ button { font: inherit; cursor: pointer; }
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background-color: var(--paper-2);
-  background-image: url('https://public.tableau.com/static/images/NY/NYCBIke/NYCCitiBike/1.png');
+  background-image: url('images/projects/03-citi-bike.png');
   background-size: cover;
   background-position: center top;
 }

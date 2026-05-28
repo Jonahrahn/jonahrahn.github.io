@@ -179,30 +179,6 @@ if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').mat
   step();
 }
 
-// ---------- Tableau auto-sized embed ---------------------------------------
-function initTableau() {
-  const container = document.getElementById('vizCitiBike');
-  if (!container || typeof tableau === 'undefined') return;
-  if (container.dataset.inited === '1') return;
-  container.dataset.inited = '1';
-  const url = 'https://public.tableau.com/views/NYCBIke/NYCCitiBike';
-  const options = {
-    hideTabs: true,
-    hideToolbar: true,
-    width: container.clientWidth + 'px',
-    height: container.clientHeight + 'px',
-    onFirstInteractive: () => { /* ready */ },
-  };
-  try {
-    new tableau.Viz(container, url, options);
-  } catch (e) {
-    // fall back silently; the noscript <img> already shows
-  }
-}
-if (document.readyState !== 'loading') initTableau();
-else document.addEventListener('DOMContentLoaded', initTableau);
-window.addEventListener('load', initTableau);
-
 // ---------- Footer year ----------------------------------------------------
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
