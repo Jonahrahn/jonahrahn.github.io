@@ -35,7 +35,7 @@ fig.text(0.05, 0.46, "Jonah Rahn",
 
 fig.text(0.05, 0.28, "Backend engineer and AI evaluation specialist.",
          fontproperties=INTER, fontsize=22, color=INK)
-fig.text(0.05, 0.21, "Building production systems at Oasis Health.",
+fig.text(0.05, 0.21, "Recently at Oasis Health · Open to next role.",
          fontproperties=INTER, fontsize=22, color=MUTED)
 
 # Bottom hairline + URL

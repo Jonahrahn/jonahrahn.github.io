@@ -14,17 +14,17 @@ tags: [resume, career, portfolio]
 
 ## Summary
 
-Backend engineer and AI evaluation specialist. Currently building production systems at Oasis Health; previously shipped adversarial testing, failure-mode taxonomies, and structured-evaluation pipelines at Scale AI and Persona Identities. I bring evaluation discipline to production code.
+Backend engineer and AI evaluation specialist. Most recently built backend safety-scoring systems at Oasis Health; previously shipped adversarial testing, failure-mode taxonomies, and structured-evaluation pipelines at Scale AI and Persona Identities. I bring evaluation discipline to production code. Open to backend and AI-evaluation roles.
 
 ---
 
 ## Experience
 
 ### Oasis Health · Backend Engineer
-**Jan 2026 to Present · New Haven, CT**
+**Jan 2026 to May 2026 · New Haven, CT**
 
-- Shipped backend APIs for Oasis's in-store product-scan flow, translating raw lab data into consumer-facing contaminant safety scores. Currently serving **500k+** requests per day across **20+** managed endpoints.
-- Designed and owned the lab-data ingestion pipeline backing Oasis's contaminant database; accelerated end-to-end input throughput and rolled out to **100%** of production traffic.
+- Built the backend safety-scoring service that ranks consumer products against verified contaminant thresholds and surfaces risk indicators to the mobile clients. **500k+** requests per day across **20+** managed endpoints.
+- Designed the data layer behind the scoring engine and rolled out the new scoring pipeline to **100%** of production traffic.
 - Hardened the production stack (auth, rate limiting, observability) so mobile clients can be trusted in front of real consumer purchase decisions.
 
 ### Persona Identities · Senior Product Development Specialist
