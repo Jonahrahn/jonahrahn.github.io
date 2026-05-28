@@ -171,57 +171,6 @@
     </div>
   </section>
 
-  <section class="section playground" id="playground">
-    <header class="section__head" data-reveal>
-      <span class="section__num">03</span>
-      <h2 class="section__title">Try it</h2>
-      <p class="section__lede">Type a sentence. The portfolio parses it live.</p>
-    </header>
-
-    <div class="playground__inner" data-reveal>
-      <label class="playground__label" for="playground-input">SENTENCE</label>
-      <textarea
-        id="playground-input"
-        class="playground__input"
-        rows="2"
-        spellcheck="false"
-        aria-label="Sentence to parse"
-      >The backend engineer parses sentences for a living.</textarea>
-
-      <div class="playground__output">
-        <div class="playground__row">
-          <span class="playground__col-label">TOKENS</span>
-          <div id="playground-tokens" class="playground__tokens" aria-live="polite">
-            <!-- Pre-rendered example. Replaced live by script.js once Compromise loads. -->
-            <span class="ptok"><span class="ptok__tag">DET</span><span class="ptok__word">The</span></span>
-            <span class="ptok"><span class="ptok__tag">ADJ</span><span class="ptok__word">backend</span></span>
-            <span class="ptok"><span class="ptok__tag">NOUN</span><span class="ptok__word">engineer</span></span>
-            <span class="ptok"><span class="ptok__tag">VERB</span><span class="ptok__word">parses</span></span>
-            <span class="ptok"><span class="ptok__tag">NOUN</span><span class="ptok__word">sentences</span></span>
-            <span class="ptok"><span class="ptok__tag">PREP</span><span class="ptok__word">for</span></span>
-            <span class="ptok"><span class="ptok__tag">DET</span><span class="ptok__word">a</span></span>
-            <span class="ptok"><span class="ptok__tag">NOUN</span><span class="ptok__word">living</span></span>
-            <span class="ptok"><span class="ptok__word">.</span></span>
-          </div>
-        </div>
-        <div class="playground__row">
-          <span class="playground__col-label">STATS</span>
-          <div id="playground-stats" class="playground__stats" aria-live="polite">
-            <span class="pstat">9 tokens</span>
-            <span class="pstat">1 sentence</span>
-            <span class="pstat">3 NOUN</span>
-            <span class="pstat">2 DET</span>
-            <span class="pstat">1 VERB</span>
-          </div>
-        </div>
-      </div>
-
-      <p class="playground__caption">
-        <em>Tagging runs entirely in the browser using <a href="https://compromise.cool" target="_blank" rel="noopener">Compromise</a>. Hover any tag for the full part-of-speech label.</em>
-      </p>
-    </div>
-  </section>
-
   <aside class="interstitial" aria-hidden="true">
     <div class="interstitial__inner">
       <span class="interstitial__num">§ III</span>
@@ -233,7 +182,7 @@
 
   <section class="section" id="work">
     <header class="section__head" data-reveal>
-      <span class="section__num">04</span>
+      <span class="section__num">03</span>
       <h2 class="section__title">Selected Work</h2>
       <p class="section__lede">Three projects that say the most about how I think about a problem.</p>
     </header>
@@ -327,7 +276,7 @@
 
   <section class="section section--alt" id="earlier">
     <header class="section__head" data-reveal>
-      <span class="section__num">05</span>
+      <span class="section__num">04</span>
       <h2 class="section__title">More Work</h2>
       <p class="section__lede">Earlier explorations and class projects.</p>
     </header>
@@ -361,7 +310,7 @@
 
   <section class="section section--contact" id="contact">
     <header class="section__head" data-reveal>
-      <span class="section__num">06</span>
+      <span class="section__num">05</span>
       <h2 class="section__title">Contact</h2>
       <p class="section__lede">The fastest ways to reach me.</p>
     </header>
@@ -390,7 +339,6 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/compromise@14.14.4/builds/compromise.min.js" defer></script>
   <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js" defer></script>
   <script src="script.js" defer></script>
 </body>
