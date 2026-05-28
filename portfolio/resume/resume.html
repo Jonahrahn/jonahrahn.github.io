@@ -21,15 +21,15 @@
       background: var(--paper);
       color: var(--ink);
       font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      font-size: 10.5pt;
-      line-height: 1.45;
+      font-size: 9.5pt;
+      line-height: 1.35;
       font-feature-settings: "ss01", "cv11", "kern", "calt";
       -webkit-font-smoothing: antialiased;
     }
     .page {
       max-width: 8.5in;
       margin: 0 auto;
-      padding: 0.6in 0.7in;
+      padding: 0.35in 0.45in;
       background: var(--paper);
     }
     .header {
@@ -37,14 +37,14 @@
       grid-template-columns: 1fr auto;
       align-items: end;
       gap: 12px;
-      padding-bottom: 12px;
+      padding-bottom: 8px;
       border-bottom: 1.5px solid var(--ink);
-      margin-bottom: 18px;
+      margin-bottom: 12px;
     }
     .header h1 {
       font-family: "Inter", sans-serif;
       font-weight: 700;
-      font-size: 32pt;
+      font-size: 26pt;
       letter-spacing: -0.025em;
       line-height: 1;
     }
@@ -60,30 +60,30 @@
 
     .summary {
       font-family: "Newsreader", Georgia, serif;
-      font-size: 11pt;
+      font-size: 10pt;
       font-style: italic;
-      line-height: 1.45;
+      line-height: 1.4;
       color: var(--ink-2);
-      padding-bottom: 14px;
+      padding-bottom: 10px;
       border-bottom: 1px solid var(--ink);
-      margin-bottom: 18px;
-      max-width: 70ch;
+      margin-bottom: 12px;
+      max-width: 78ch;
     }
 
     h2 {
       font-family: "JetBrains Mono", monospace;
-      font-size: 9pt;
+      font-size: 8.5pt;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--accent);
-      margin: 18px 0 10px;
-      padding-bottom: 6px;
+      margin: 12px 0 7px;
+      padding-bottom: 4px;
       border-bottom: 1px solid var(--ink);
     }
     h2:first-of-type { margin-top: 0; }
 
     .role {
-      margin-bottom: 14px;
+      margin-bottom: 9px;
       page-break-inside: avoid;
     }
     .role__head {
@@ -91,26 +91,26 @@
       grid-template-columns: 1fr auto;
       align-items: baseline;
       gap: 12px;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
     .role__title {
       font-weight: 600;
-      font-size: 11pt;
+      font-size: 10pt;
       letter-spacing: -0.01em;
     }
     .role__company { color: var(--accent); font-weight: 600; }
     .role__dates {
       font-family: "JetBrains Mono", monospace;
-      font-size: 8.5pt;
+      font-size: 8pt;
       letter-spacing: 0.06em;
       color: var(--muted);
     }
     .role__loc {
       font-family: "JetBrains Mono", monospace;
-      font-size: 8.5pt;
+      font-size: 8pt;
       letter-spacing: 0.06em;
       color: var(--muted);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .role ul {
       list-style: none;
@@ -118,11 +118,11 @@
     }
     .role li {
       position: relative;
-      padding-left: 16px;
-      margin-bottom: 3px;
-      font-size: 10pt;
+      padding-left: 14px;
+      margin-bottom: 2px;
+      font-size: 9.5pt;
       color: var(--ink-2);
-      line-height: 1.45;
+      line-height: 1.38;
     }
     .role li::before {
       content: "—";
@@ -210,7 +210,7 @@
     </header>
 
     <p class="summary">
-      Backend engineer with hybrid expertise in LLM evaluation and computational linguistics. Currently building backend systems for a consumer health product at Oasis Health. Previously shipped adversarial testing, failure-mode taxonomies, and structured-evaluation pipelines at Persona Identities and Scale AI. I bring evaluation discipline to production code.
+      Backend engineer with hybrid expertise in LLM evaluation and computational linguistics. Currently building backend systems at Oasis Health; previously shipped adversarial testing, failure-mode taxonomies, and structured-evaluation pipelines at Persona Identities and Scale AI. I bring evaluation discipline to production code.
     </p>
 
     <h2>Experience</h2>
@@ -220,11 +220,10 @@
         <div class="role__title"><span class="role__company">Oasis Health</span> · Backend Engineer</div>
         <div class="role__dates">Jan 2026 – Present</div>
       </div>
-      <div class="role__loc">New Haven, CT</div>
       <ul>
-        <li>Shipped backend APIs powering Oasis's in-store product-scan flow, translating raw lab data into consumer-facing contaminant safety scores. <span class="todo">[Add: requests/day or P95 latency.]</span></li>
-        <li>Designed and owned the data-ingestion pipeline that backs Oasis's contaminant database, supporting <b>[N]</b> product categories and <b>[N]</b> new lab sources.</li>
-        <li>Hardened the production stack — auth, rate limiting, observability — so the mobile clients can be trusted in front of real consumer purchase decisions.</li>
+        <li>Shipped backend APIs for Oasis's in-store product-scan flow, translating raw lab data into consumer-facing contaminant safety scores. <span class="todo">[Add: req/day or P95 latency.]</span></li>
+        <li>Designed and owned the data-ingestion pipeline backing Oasis's contaminant database, supporting <b>[N]</b> product categories and <b>[N]</b> lab sources.</li>
+        <li>Hardened the production stack — auth, rate limiting, observability — so mobile clients can be trusted in front of real consumer purchase decisions.</li>
       </ul>
     </div>
 
@@ -246,10 +245,9 @@
         <div class="role__dates">Apr 2024 – Jul 2025</div>
       </div>
       <ul>
-        <li>Built adversarial prompts and structured evaluations that surfaced harmful, biased, and unreliable model outputs for enterprise clients.</li>
-        <li>Authored weekly reports analyzing drift, misalignment patterns, hallucinations, and behavioral risk using SQL and Python.</li>
+        <li>Built adversarial prompts and structured evaluations that surfaced harmful, biased, and unreliable outputs for enterprise clients.</li>
+        <li>Authored weekly reports analyzing drift, misalignment, hallucinations, and behavioral risk using SQL and Python.</li>
         <li>Designed evaluation criteria, rubrics, and taxonomies that improved reviewer precision and reproducibility across high-volume projects.</li>
-        <li>Partnered with ML teams to refine failure modes and update eval pipelines.</li>
       </ul>
     </div>
 
@@ -260,8 +258,7 @@
       </div>
       <ul>
         <li>Evaluated LLM outputs for safety, bias, hallucinations, and factual accuracy; ranked completions against gold standards.</li>
-        <li>Diagnosed breakdowns in GenAI evaluations, escalated root causes, and coordinated fixes with engineering and QA.</li>
-        <li>Quantified reviewer throughput, variance, and pipeline performance with Python and SQL.</li>
+        <li>Diagnosed pipeline breakdowns and quantified reviewer throughput and variance with Python and SQL.</li>
       </ul>
     </div>
 
@@ -282,8 +279,7 @@
       </div>
       <ul>
         <li>Boosted ML model accuracy by <b>30%</b> on Seeker Relevance through targeted linguistic annotation and preprocessing improvements.</li>
-        <li>Authored annotation guidelines and reviewed labeler output that fed into the Seeker Relevance training set.</li>
-        <li>Partnered with engineering and applied research to translate linguistic findings into ranking and recall improvements.</li>
+        <li>Authored annotation guidelines and partnered with engineering and applied research to translate linguistic findings into ranking and recall improvements.</li>
       </ul>
     </div>
 
@@ -303,12 +299,8 @@
 
         <h2>Projects</h2>
         <ul class="projects">
-          <li><b>Citi Bike Tableau Visualization</b> — interactive NYC trip data dashboard on Tableau Public.</li>
-          <li><em>Several projects in progress; full list on the portfolio.</em></li>
+          <li><b>Citi Bike Tableau Visualization</b> — NYC trip data dashboard on Tableau Public. Full portfolio at <a href="https://jonahrahn.github.io" style="color:var(--accent);text-decoration:none;">jonahrahn.github.io</a>.</li>
         </ul>
-
-        <h2>Interests</h2>
-        <p class="interests">LLMs · language research · mountain biking · soccer · podcasts</p>
       </div>
 
       <div>
