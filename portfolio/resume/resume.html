@@ -125,9 +125,9 @@
       line-height: 1.38;
     }
     .role li::before {
-      content: "—";
+      content: "·";
       position: absolute;
-      left: 0;
+      left: 2px;
       color: var(--accent);
       font-weight: 500;
     }
@@ -182,7 +182,7 @@
       line-height: 1.5;
     }
     .projects li { padding-left: 16px; position: relative; margin-bottom: 4px; }
-    .projects li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+    .projects li::before { content: "·"; position: absolute; left: 2px; color: var(--accent); }
 
     .interests {
       font-family: "JetBrains Mono", monospace;
@@ -218,19 +218,19 @@
     <div class="role">
       <div class="role__head">
         <div class="role__title"><span class="role__company">Oasis Health</span> · Backend Engineer</div>
-        <div class="role__dates">Jan 2026 – Present</div>
+        <div class="role__dates">Jan 2026 to Present</div>
       </div>
       <ul>
-        <li>Shipped backend APIs for Oasis's in-store product-scan flow, translating raw lab data into consumer-facing contaminant safety scores. <span class="todo">[Add: req/day or P95 latency.]</span></li>
-        <li>Designed and owned the data-ingestion pipeline backing Oasis's contaminant database, supporting <b>[N]</b> product categories and <b>[N]</b> lab sources.</li>
-        <li>Hardened the production stack — auth, rate limiting, observability — so mobile clients can be trusted in front of real consumer purchase decisions.</li>
+        <li>Shipped backend APIs for Oasis's in-store product-scan flow, translating raw lab data into consumer-facing contaminant safety scores. Currently serving <b>500k+</b> requests per day across <b>20+</b> managed endpoints.</li>
+        <li>Designed and owned the lab-data ingestion pipeline backing Oasis's contaminant database; accelerated end-to-end input throughput and rolled out to <b>100%</b> of production traffic.</li>
+        <li>Hardened the production stack (auth, rate limiting, observability) so mobile clients can be trusted in front of real consumer purchase decisions.</li>
       </ul>
     </div>
 
     <div class="role">
       <div class="role__head">
         <div class="role__title"><span class="role__company">Persona Identities</span> · Senior Product Development Specialist</div>
-        <div class="role__dates">Oct 2025 – Nov 2025</div>
+        <div class="role__dates">Oct 2025 to Nov 2025</div>
       </div>
       <ul>
         <li>Delivered two end-to-end LLM evaluation projects for enterprise clients, including pipeline review, reporting, and post-mortem documentation.</li>
@@ -242,19 +242,19 @@
     <div class="role">
       <div class="role__head">
         <div class="role__title"><span class="role__company">Scale AI</span> · Operations Associate, Trust and Safety (Eval Engineer)</div>
-        <div class="role__dates">Apr 2024 – Jul 2025</div>
+        <div class="role__dates">Apr 2024 to Jul 2025</div>
       </div>
       <ul>
-        <li>Built adversarial prompts and structured evaluations that surfaced harmful, biased, and unreliable outputs for enterprise clients.</li>
+        <li>Built adversarial prompts and structured evaluations that surfaced harmful, biased, and unreliable outputs for <b>5+</b> enterprise clients across <b>20+</b> shipped projects.</li>
         <li>Authored weekly reports analyzing drift, misalignment, hallucinations, and behavioral risk using SQL and Python.</li>
-        <li>Designed evaluation criteria, rubrics, and taxonomies that improved reviewer precision and reproducibility across high-volume projects.</li>
+        <li>Designed evaluation criteria, rubrics, and taxonomies that improved reviewer precision by <b>30%+</b> and lifted reproducibility across high-volume projects.</li>
       </ul>
     </div>
 
     <div class="role">
       <div class="role__head">
         <div class="role__title"><span class="role__company">Scale AI</span> (via Hire Art) · Generative AI Specialist → Queue Manager</div>
-        <div class="role__dates">Jan 2024 – Apr 2024</div>
+        <div class="role__dates">Jan 2024 to Apr 2024</div>
       </div>
       <ul>
         <li>Evaluated LLM outputs for safety, bias, hallucinations, and factual accuracy; ranked completions against gold standards.</li>
@@ -265,7 +265,7 @@
     <div class="role">
       <div class="role__head">
         <div class="role__title"><span class="role__company">Meta</span> (via Magnit) · Data Labeling Analyst, Redteaming</div>
-        <div class="role__dates">Nov 2023 – Dec 2023</div>
+        <div class="role__dates">Nov 2023 to Dec 2023</div>
       </div>
       <ul>
         <li>Performed adversarial testing on production LLMs and delivered detailed failure-mode reports that fed into model robustness work.</li>
@@ -275,7 +275,7 @@
     <div class="role">
       <div class="role__head">
         <div class="role__title"><span class="role__company">LinkedIn</span> · Engineering Linguist, Seeker Relevance AI</div>
-        <div class="role__dates">Jun 2022 – Jul 2023</div>
+        <div class="role__dates">Jun 2022 to Jul 2023</div>
       </div>
       <ul>
         <li>Boosted ML model accuracy by <b>30%</b> on Seeker Relevance through targeted linguistic annotation and preprocessing improvements.</li>
@@ -299,7 +299,7 @@
 
         <h2>Projects</h2>
         <ul class="projects">
-          <li><b>Citi Bike Tableau Visualization</b> — NYC trip data dashboard on Tableau Public. Full portfolio at <a href="https://jonahrahn.github.io" style="color:var(--accent);text-decoration:none;">jonahrahn.github.io</a>.</li>
+          <li><b>Citi Bike Tableau Visualization</b>, NYC trip data dashboard on Tableau Public. Full portfolio at <a href="https://jonahrahn.github.io" style="color:var(--accent);text-decoration:none;">jonahrahn.github.io</a>.</li>
         </ul>
       </div>
 
