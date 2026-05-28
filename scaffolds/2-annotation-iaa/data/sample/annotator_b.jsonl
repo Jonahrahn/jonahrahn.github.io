@@ -1,0 +1,4 @@
+{"doc_id": "doc-001", "annotator": "ben", "text": "Sarah Chen joined Stripe last March after five years at Apple.", "spans": [{"start": 0, "end": 10, "label": "PERSON"}, {"start": 18, "end": 24, "label": "ORG"}, {"start": 56, "end": 61, "label": "ORG"}]}
+{"doc_id": "doc-002", "annotator": "ben", "text": "The Bay Area office hosts roughly 200 engineers from across Meta.", "spans": [{"start": 4, "end": 12, "label": "GPE"}, {"start": 60, "end": 64, "label": "ORG"}]}
+{"doc_id": "doc-003", "annotator": "ben", "text": "I read about the deal in the Financial Times this morning.", "spans": [{"start": 25, "end": 44, "label": "ORG"}]}
+{"doc_id": "doc-004", "annotator": "ben", "text": "Dr. Patel will speak at the New York Academy of Sciences in October.", "spans": [{"start": 4, "end": 9, "label": "PERSON"}, {"start": 28, "end": 56, "label": "ORG"}]}

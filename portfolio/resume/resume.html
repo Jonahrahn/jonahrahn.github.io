@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Jonah Rahn · Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111111;
+      --ink-2: #2a2a2a;
+      --muted: #6b6b6b;
+      --paper: #fafaf7;
+      --accent: #b13a1c;
+      --accent-2: #35545a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.35;
+      font-feature-settings: "ss01", "cv11", "kern", "calt";
+      -webkit-font-smoothing: antialiased;
+    }
+    .page {
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.35in 0.45in;
+      background: var(--paper);
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid var(--ink);
+      margin-bottom: 12px;
+    }
+    .header h1 {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 26pt;
+      letter-spacing: -0.025em;
+      line-height: 1;
+    }
+    .header__contact {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 8.5pt;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.55;
+    }
+    .header__contact a { color: var(--accent); text-decoration: none; }
+
+    .summary {
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 10pt;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--ink-2);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--ink);
+      margin-bottom: 12px;
+      max-width: 78ch;
+    }
+
+    h2 {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 8.5pt;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 12px 0 7px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--ink);
+    }
+    h2:first-of-type { margin-top: 0; }
+
+    .role {
+      margin-bottom: 9px;
+      page-break-inside: avoid;
+    }
+    .role__head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 1px;
+    }
+    .role__title {
+      font-weight: 600;
+      font-size: 10pt;
+      letter-spacing: -0.01em;
+    }
+    .role__company { color: var(--accent); font-weight: 600; }
+    .role__dates {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 8pt;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+    .role__loc {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 8pt;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .role ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .role li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 2px;
+      font-size: 9.5pt;
+      color: var(--ink-2);
+      line-height: 1.38;
+    }
+    .role li::before {
+      content: "·";
+      position: absolute;
+      left: 2px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .role .todo {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 9pt;
+    }
+    .role b { color: var(--ink); font-weight: 600; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .edu-item {
+      margin-bottom: 6px;
+    }
+    .edu-item strong { font-weight: 600; }
+    .edu-item__dates {
+      float: right;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 8.5pt;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 4px 16px;
+      font-size: 9.5pt;
+    }
+    .skills dt {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 8.5pt;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 500;
+      padding-top: 2px;
+    }
+    .skills dd {
+      color: var(--ink-2);
+      line-height: 1.5;
+    }
+
+    .projects li, .interests {
+      font-size: 10pt;
+      color: var(--ink-2);
+      line-height: 1.5;
+    }
+    .projects li { padding-left: 16px; position: relative; margin-bottom: 4px; }
+    .projects li::before { content: "·"; position: absolute; left: 2px; color: var(--accent); }
+
+    .interests {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 9pt;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    @media print {
+      body { background: white; }
+      .page { padding: 0.5in 0.6in; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <h1>Jonah Rahn</h1>
+      <div class="header__contact">
+        <div>(714) 795-4872 · jonah.rahn@gmail.com</div>
+        <div>New Haven, CT</div>
+        <div><a href="https://www.linkedin.com/in/jonah-rahn/">LinkedIn</a> · <a href="https://jonahrahn.github.io">Portfolio</a></div>
+      </div>
+    </header>
+
+    <p class="summary">
+      Backend engineer and AI evaluation specialist. Most recently built backend safety-scoring systems at Oasis Health; previously shipped adversarial testing, failure-mode taxonomies, and structured-evaluation pipelines at Scale AI and Persona Identities. I bring evaluation discipline to production code. Open to backend and AI-evaluation roles.
+    </p>
+
+    <h2>Experience</h2>
+
+    <div class="role">
+      <div class="role__head">
+        <div class="role__title"><span class="role__company">Oasis Health</span> · Backend Engineer</div>
+        <div class="role__dates">Jan 2026 to May 2026</div>
+      </div>
+      <ul>
+        <li>Built the backend safety-scoring service that ranks consumer products against verified contaminant thresholds and surfaces risk indicators to the mobile clients. <b>500k+</b> requests per day across <b>20+</b> managed endpoints.</li>
+        <li>Designed the data layer behind the scoring engine and rolled out the new scoring pipeline to <b>100%</b> of production traffic.</li>
+        <li>Hardened the production stack (auth, rate limiting, observability) so mobile clients can be trusted in front of real consumer purchase decisions.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role__head">
+        <div class="role__title"><span class="role__company">Persona Identities</span> · Senior Product Development Specialist</div>
+        <div class="role__dates">Oct 2025 to Nov 2025</div>
+      </div>
+      <ul>
+        <li>Delivered two end-to-end LLM evaluation projects for enterprise clients, including pipeline review, reporting, and post-mortem documentation.</li>
+        <li>Implemented security fixes that mitigated incoming risk across <b>5+</b> high-priority enterprise clients, closing identity and reasoning vulnerabilities before deployment.</li>
+        <li>Authored evaluation reports and failure-mode taxonomies that fed into the team's debugging and refinement work.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role__head">
+        <div class="role__title"><span class="role__company">Scale AI</span> · Operations Associate, Trust and Safety (Eval Engineer)</div>
+        <div class="role__dates">Apr 2024 to Jul 2025</div>
+      </div>
+      <ul>
+        <li>Built adversarial prompts and structured evaluations that surfaced harmful, biased, and unreliable outputs for <b>5+</b> enterprise clients across <b>20+</b> shipped projects.</li>
+        <li>Authored weekly reports analyzing drift, misalignment, hallucinations, and behavioral risk using SQL and Python.</li>
+        <li>Designed evaluation criteria, rubrics, and taxonomies that improved reviewer precision by <b>30%+</b> and lifted reproducibility across high-volume projects.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role__head">
+        <div class="role__title"><span class="role__company">Scale AI</span> (via Hire Art) · Generative AI Specialist → Queue Manager</div>
+        <div class="role__dates">Jan 2024 to Apr 2024</div>
+      </div>
+      <ul>
+        <li>Evaluated LLM outputs for safety, bias, hallucinations, and factual accuracy; ranked completions against gold standards.</li>
+        <li>Diagnosed pipeline breakdowns and quantified reviewer throughput and variance with Python and SQL.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role__head">
+        <div class="role__title"><span class="role__company">Meta</span> · Data Labeling Analyst, Redteaming</div>
+        <div class="role__dates">Nov 2023 to Dec 2023</div>
+      </div>
+      <ul>
+        <li>Performed adversarial testing on production LLMs and delivered detailed failure-mode reports that fed into model robustness work.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role__head">
+        <div class="role__title"><span class="role__company">LinkedIn</span> · Engineering Linguist, Seeker Relevance AI</div>
+        <div class="role__dates">Jun 2022 to Jul 2023</div>
+      </div>
+      <ul>
+        <li>Boosted ML model accuracy by <b>30%</b> on Seeker Relevance through targeted linguistic annotation and preprocessing improvements.</li>
+        <li>Authored annotation guidelines for the Seeker Relevance training corpus and partnered with ML engineering to convert linguistic findings into ranking and recall lifts.</li>
+      </ul>
+    </div>
+
+    <div class="two-col" style="margin-top: 4px;">
+      <div>
+        <h2>Education</h2>
+        <div class="edu-item">
+          <span class="edu-item__dates">2022</span>
+          <strong>UC Davis</strong><br>
+          <span style="color:var(--muted); font-size:9.5pt;">Data Analytics / Data Science Bootcamp</span>
+        </div>
+        <div class="edu-item">
+          <span class="edu-item__dates">2021</span>
+          <strong>UC Santa Cruz</strong><br>
+          <span style="color:var(--muted); font-size:9.5pt;">B.A. Linguistics</span>
+        </div>
+
+        <h2>Projects</h2>
+        <ul class="projects">
+          <li><b>Mental Health Risk Predictor</b>, ML model identifying income inequality as the strongest predictor of community mental-health risk. <a href="https://jonahrahn.github.io/work/mental-health.html" style="color:var(--accent);text-decoration:none;">Case study</a> · <a href="https://github.com/Jonahrahn/Mental_Health_Predictor" style="color:var(--accent);text-decoration:none;">Code</a></li>
+          <li><b>Citi Bike Tableau</b>, live NYC trip dashboard on Tableau Public. <a href="https://jonahrahn.github.io/work/citi-bike.html" style="color:var(--accent);text-decoration:none;">Case study</a> · <a href="https://public.tableau.com/app/profile/jonah.rahn/viz/NYCBIke/NYCCitiBike" style="color:var(--accent);text-decoration:none;">Live</a></li>
+          <li>Full portfolio at <a href="https://jonahrahn.github.io" style="color:var(--accent);text-decoration:none;">jonahrahn.github.io</a>.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Skills</h2>
+        <dl class="skills">
+          <dt>Backend</dt><dd>API design · REST · database design · data pipelines · observability · auth</dd>
+          <dt>LLM Eval</dt><dd>Adversarial prompting · failure-mode taxonomy · red-teaming · rubric design</dd>
+          <dt>Languages</dt><dd>Python (pandas, NumPy, Jupyter) · SQL · JavaScript</dd>
+          <dt>Data</dt><dd>BigQuery · Looker · Tableau · ETL · A/B testing · data warehousing</dd>
+          <dt>ML / AI</dt><dd>PyTorch · TensorFlow · LangChain · prompt engineering · NLP</dd>
+          <dt>Linguistics</dt><dd>Syntax · computational linguistics · annotation taxonomy · multilingual evaluation</dd>
+          <dt>Infra</dt><dd>GCP · cloud infrastructure · MongoDB · PostgreSQL · Flask · React</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

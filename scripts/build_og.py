@@ -25,17 +25,17 @@ plt.rcParams.update({
 })
 
 fig = plt.figure(figsize=(12, 6.3), dpi=100)
-fig.text(0.05, 0.86, "E N G I N E E R I N G   L I N G U I S T   ·   S A N T A   C R U Z ,   C A",
-         fontproperties=MONO, fontsize=14, color=MUTED)
+fig.text(0.05, 0.86, "B A C K E N D   E N G I N E E R   ·   A I   E V A L U A T I O N   ·   N E W   H A V E N ,   C T",
+         fontproperties=MONO, fontsize=12, color=MUTED)
 # Top hairline
 fig.add_artist(plt.Line2D([0.05, 0.95], [0.81, 0.81], color=INK, linewidth=1, transform=fig.transFigure))
 
 fig.text(0.05, 0.46, "Jonah Rahn",
          fontproperties=INTER, fontsize=110, color=INK, weight="bold")
 
-fig.text(0.05, 0.28, "Bridging human language and machine intelligence.",
+fig.text(0.05, 0.28, "Backend engineer and AI evaluation specialist.",
          fontproperties=INTER, fontsize=22, color=INK)
-fig.text(0.05, 0.21, "Linguistics + ML model optimization @ LinkedIn.",
+fig.text(0.05, 0.21, "Recently at Oasis Health · Open to next role.",
          fontproperties=INTER, fontsize=22, color=MUTED)
 
 # Bottom hairline + URL
