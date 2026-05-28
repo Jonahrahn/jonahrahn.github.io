@@ -83,5 +83,6 @@ Backend engineer and AI evaluation specialist. Currently building production sys
 
 ## Selected Projects
 
-- **Citi Bike Tableau Visualization**, NYC trip data dashboard on Tableau Public.
+- **Mental Health Risk Predictor** · ML model identifying income inequality, not income level, as the strongest predictor of community mental-health risk. [Case study](https://jonahrahn.github.io/work/mental-health.html) · [Code](https://github.com/Jonahrahn/Mental_Health_Predictor)
+- **Citi Bike Tableau Visualization** · Live NYC trip dashboard with twin commuter peaks and user-type segmentation, August 2018 dataset. [Case study](https://jonahrahn.github.io/work/citi-bike.html) · [Live dashboard](https://public.tableau.com/app/profile/jonah.rahn/viz/NYCBIke/NYCCitiBike)
 - Full portfolio at [jonahrahn.github.io](https://jonahrahn.github.io).

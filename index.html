@@ -239,12 +239,29 @@
     </header>
     <ul class="work-list">
       <li class="work-item" data-reveal>
-        <figure class="work-item__preview work-item__preview--embed">
-          <iframe
-            src="https://public.tableau.com/views/NYCBIke/NYCCitiBike?:embed=y&:display_count=no&:showVizHome=no&:toolbar=no&:tabs=no"
-            title="Citi Bike Tableau dashboard"
-            loading="lazy"
-            allowfullscreen></iframe>
+        <figure class="work-item__preview work-item__preview--tableau">
+          <div class="tableauPlaceholder" id="vizCitiBike">
+            <noscript>
+              <a href="https://public.tableau.com/app/profile/jonah.rahn/viz/NYCBIke/NYCCitiBike" target="_blank" rel="noopener">
+                <img alt="Citi Bike Tableau dashboard" src="https://public.tableau.com/static/images/NY/NYCBIke/NYCCitiBike/1.png">
+              </a>
+            </noscript>
+            <object class="tableauViz" style="display:none;">
+              <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F">
+              <param name="embed_code_version" value="3">
+              <param name="site_root" value="">
+              <param name="name" value="NYCBIke&#47;NYCCitiBike">
+              <param name="tabs" value="no">
+              <param name="toolbar" value="no">
+              <param name="static_image" value="https://public.tableau.com/static/images/NY/NYCBIke/NYCCitiBike/1.png">
+              <param name="animate_transition" value="yes">
+              <param name="display_static_image" value="yes">
+              <param name="display_spinner" value="yes">
+              <param name="display_overlay" value="yes">
+              <param name="display_count" value="no">
+              <param name="language" value="en-US">
+            </object>
+          </div>
         </figure>
         <div class="work-item__content">
           <div class="work-item__meta">
@@ -374,6 +391,7 @@
   </footer>
 
   <script src="https://unpkg.com/compromise@14.14.4/builds/compromise.min.js" defer></script>
+  <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>

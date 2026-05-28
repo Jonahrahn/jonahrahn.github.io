@@ -487,6 +487,26 @@ button { font: inherit; cursor: pointer; }
 }
 .work-item__preview--embed:hover img { transform: none; }
 
+/* Tableau JS-API viz: forces the viz canvas to fill the container */
+.work-item__preview--tableau {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--paper-2);
+  background-image: url('https://public.tableau.com/static/images/NY/NYCBIke/NYCCitiBike/1.png');
+  background-size: cover;
+  background-position: center top;
+}
+.work-item__preview--tableau .tableauPlaceholder,
+.work-item__preview--tableau .tableauPlaceholder > * {
+  width: 100% !important;
+  height: 100% !important;
+}
+.work-item__preview--tableau iframe { width: 100% !important; height: 100% !important; border: 0; }
+.work-item__preview--tableau noscript img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.work-item:hover .work-item__preview--tableau img { transform: none; }
+
 .work-item__content {
   display: flex;
   flex-direction: column;
