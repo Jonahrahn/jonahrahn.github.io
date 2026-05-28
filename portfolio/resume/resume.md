@@ -14,7 +14,7 @@ tags: [resume, career, portfolio]
 
 ## Summary
 
-Backend engineer with hybrid expertise in LLM evaluation and computational linguistics. Currently building backend systems at Oasis Health; previously shipped adversarial testing, failure-mode taxonomies, and structured-evaluation pipelines at Persona Identities and Scale AI. I bring evaluation discipline to production code.
+Backend engineer and AI evaluation specialist. Currently building production systems at Oasis Health; previously shipped adversarial testing, failure-mode taxonomies, and structured-evaluation pipelines at Scale AI and Persona Identities. I bring evaluation discipline to production code.
 
 ---
 
@@ -56,7 +56,7 @@ Backend engineer with hybrid expertise in LLM evaluation and computational lingu
 **Jun 2022 to Jul 2023**
 
 - Boosted ML model accuracy by **30%** on Seeker Relevance through targeted linguistic annotation and preprocessing improvements.
-- Authored annotation guidelines and partnered with engineering and applied research to translate linguistic findings into ranking and recall improvements.
+- Authored annotation guidelines for the Seeker Relevance training corpus and partnered with ML engineering to convert linguistic findings into ranking and recall lifts.
 
 ---
 

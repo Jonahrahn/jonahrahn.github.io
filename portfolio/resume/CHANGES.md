@@ -81,21 +81,38 @@ Final PDF is rendered at 0.85 print scale to guarantee a single Letter page. If 
 
 All em (`—`) and en (`–`) dashes were swept out of `resume.md`, `resume.html`, and this file at user request. Bullet markers in `resume.html` now use mid-dot (`·`) in rust.
 
-## Still open from you
+## Positioning (now decided)
 
-1. **Sanity check the LinkedIn bullet 2.** I drafted it as plausible. If you did something different (or want to lead with the annotation guidelines specifically), send the corrected language.
-2. **Persona Identities bullet 3** ("Authored evaluation reports and failure-mode taxonomies that fed into the team's debugging and refinement work") is real but generic. A specific tool name, deliverable, or count would land harder.
+Summary now reads "Backend engineer and AI evaluation specialist." Leads with the current Oasis role, names the eval expertise as the second track, ends with the value statement. Same summary used on the portfolio About section.
 
-## Portfolio reconciliation (still pending)
+## LinkedIn bullet 2 (polished)
 
-The portfolio (jonahrahn.github.io) still positions you as Engineering Linguist at LinkedIn in Santa Cruz. The resume now reflects three jobs since then. Portfolio needs:
+Was: "Authored annotation guidelines and partnered with engineering and applied research to translate linguistic findings into ranking and recall improvements."
 
-- Hero eyebrow: "Backend engineer · New Haven, CT"
+Now: "Authored annotation guidelines for the Seeker Relevance training corpus and partnered with ML engineering to convert linguistic findings into ranking and recall lifts."
+
+Still drafted (not validated by Jonah). If the team or artifact name is wrong, send a correction.
+
+## Portfolio reconciliation (done)
+
+Synced the portfolio to match the new resume positioning:
+
+- Hero eyebrow: "Backend engineer · AI evaluation · New Haven, CT"
+- Hero lede: rewritten with new POS-tagged sentence ("I build backend systems and the evaluations that hold them accountable, with linguistics as the lens.")
 - Hero sidebar NOW: Backend Engineer @ Oasis Health
-- About lede: reframed around the hybrid backend / LLM eval / linguistics positioning
-- About data table: updated company, role, focus, location
-- Footer location: New Haven
-- OG card: regenerate with new tagline
-- /now page: "Working on" reflects Oasis
+- Hero sidebar STACK: Python · SQL · APIs · LLM eval
+- About lede: rewritten around the backend + eval positioning
+- About body paragraph: reframed around "production software" not "ML systems"
+- About data table: Oasis Health / Backend Engineer / APIs, data pipelines, evaluation / AI evaluation & computational linguistics / B.A. Linguistics / New Haven, CT
+- Proof points: 500k+ daily requests, 20+ APIs managed, 5+ enterprise eval clients, 30%+ reviewer-precision lift
+- Footer location across index.html / now.html / 404.html: New Haven, CT
+- /now Working on: backend APIs at Oasis, lab-data pipeline, production hardening
+- /now meta line: New Haven, CT
+- Page title + meta description + OG/Twitter tags: rewritten with new tagline
+- OG card image regenerated with "Backend engineer and AI evaluation specialist · Building production systems at Oasis Health"
+- Playground default text changed from "engineering linguist" to "backend engineer"
 
-Open question (still): is "Engineering Linguist" still the brand for the site, or do you want to re-brand around the current Backend Engineer / Eval Engineer hybrid?
+## Still nice-to-have (not blocking)
+
+- Persona Identities bullet 3 is real but generic. A specific tool name, deliverable, or count would land harder if you have one.
+- Resume PDF is rendered at 0.85 scale to fit one page. If you'd rather it be at 1.0 scale, tell me which sections to cut and I'll trim content instead.
