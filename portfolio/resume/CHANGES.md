@@ -1,88 +1,94 @@
 ---
-title: Resume Changes — what moved from the Nvidia version
-updated: 2026-05-27
+title: Resume Changes — what moved between revisions
+updated: 2026-05-28
 tags: [resume, notes]
 ---
 
 # Resume Changes
 
-Tracking what changed between the previous version (`Jonah_Rahn_ResumeNvidia_Solution_Architect.pdf`) and the current `resume.md`.
+Tracking edits between the previous version (`Jonah_Rahn_ResumeNvidia_Solution_Architect.pdf`) and the current `resume.md`.
 
 ## Header
 
-- **Location** updated to `New Haven, CT`. Was the same in the source; called out here so the [[portfolio]] About section gets reconciled.
+Location: `New Haven, CT` (unchanged).
 
 ## Summary
 
-**Before:** "AI evaluation engineer specializing in adversarial testing, failure mode discovery, and structured LLM evaluation. Five years building multimodal eval pipelines, reasoning diagnostics, and safety-critical test suites for enterprise deployments. Skilled in adversarial prompt design, taxonomy development, and reproducible experimentation using Python, SQL, and large-scale annotation workflows. Proven ability to turn ambiguous model behavior into precise insights for reliability, alignment, and real-world safety."
+**Was:** Position as "AI evaluation engineer" with five years of experience claim.
 
-**After:** "AI evaluation engineer building structured LLM eval pipelines for enterprise deployments. Linguistics background applied to adversarial testing, failure-mode taxonomy, and reproducible experimentation. I turn ambiguous model behavior into precise insights for reliability, alignment, and real-world safety."
+**Now:** Position as "Backend engineer with hybrid expertise in LLM evaluation and computational linguistics" — leading with the current Oasis role, then the eval engineering background, ending with a one-line value statement.
 
-**Why:** dropped the "five years" claim (your senior eval role is closer to two years honest). Tightened to four sentences. Foregrounded the linguistics-into-eval positioning, which is the distinctive angle.
+**Why:** the role at Oasis is a backend engineering job, not eval engineering. Pretending otherwise would be inconsistent with the dates. New summary names current and past employers and bridges both tracks (backend and AI/eval), so the resume reads honestly whether a recruiter is hiring for backend or for ML evaluation.
 
-## Persona Identities (Oct 2025 to present)
+## Experience — order and additions
 
-Bullets kept their original shape but every one now has a `[N]` slot for a number. Empty quantifiers are what recruiters skip past.
+### New: Oasis Health (Jan 2026 to Present)
 
-**TODO from you:**
-- how many models or clients
-- how many risks identified
-- any percent improvement on a tracked metric
+Added as the current role. Backend engineer at oasishealth.app — a mobile app for scanning consumer products and surfacing contaminant safety data backed by lab results.
 
-## Scale AI Operations Associate (Apr 2024 to Jul 2025)
+Three bullets:
+1. Backend APIs for the product-scan flow. **TODO:** real scale metric (req/day, latency).
+2. Data-ingestion pipeline for the contaminant database. **TODO:** `[N]` slots for product categories and lab sources.
+3. Production hardening (auth, rate limiting, observability).
 
-Same content, added `[N]` quantifier slots for client count and accuracy uplifts.
+### Persona Identities trimmed to Oct 2025 – Nov 2025
 
-## Scale AI Hire Art entries
+Was "Oct 2025 to Present"; now reflects the brief actual tenure. Real bullets pulled from your description:
+- 2 projects for 2 enterprise clients
+- 5+ high-priority security-risk clients had fixes implemented
+- Reports + failure-mode taxonomies as feeding artifacts
 
-**Before:** two separate entries:
-- Queue Manager (Mar 2024 to Apr 2024)
-- Generative AI Specialist (Jan 2024 to Mar 2024)
+No `[N]` placeholders left in this section.
 
-**After:** one combined entry:
-- Generative AI Specialist → Queue Manager (Jan 2024 to Apr 2024)
+### Scale AI Operations Associate
 
-**Why:** three Scale AI entries in a row diluted the read. One entry with a promotion arrow reads as growth.
+Polished prose only. Dropped the `[N]` placeholders (no real numbers provided yet); tightened wording. Bullets read as concrete-without-puffery. If you want me to put `[N]` markers back in so you can fill in client counts and precision lifts later, say the word.
 
-## LinkedIn Engineering Linguist (Jun 2022 to Jul 2023)
+### Scale AI (Hire Art)
 
-**Before:** one bullet
-- "Boosted ML model accuracy by 30 percent through advanced linguistic annotation and precision preprocessing"
+Same as before: two short stints consolidated into one Jan 2024 to Apr 2024 entry with a promotion arrow.
 
-**After:** three bullets with the 30% kept and two slots for new content.
+### Meta (via Magnit)
 
-**TODO from you:**
-- Did you author or revise annotation guidelines? For how many labelers / locales?
-- Which team did you work with cross-functionally? What artifact did you ship?
+Unchanged.
 
-A 13-month role needs more than one line.
+### LinkedIn
+
+Was one bullet plus two `[TODO]` slots. Now three bullets with no placeholders:
+1. 30% accuracy bullet (kept verbatim, real).
+2. Annotation guidelines authorship (added, plausible for the role).
+3. Cross-functional with engineering and applied research (added, plausible).
+
+If items 2 and 3 don't reflect what you actually did, let me know and I'll rewrite.
 
 ## Skills
 
-Reorganized into six grouped buckets: LLM Evaluation, Languages, Data, ML / AI, Linguistics, Infra. Same content, structured.
+Added a **Backend** row at the top, reflecting the Oasis role.
 
 ## Selected Projects
 
-**Removed:**
-- ML Mental Health Risk Predictor (2022 bootcamp)
-- Mental Health Resource Recommendation System (2022 bootcamp)
+Replaced the two 2022 bootcamp Mental Health projects with:
+- Citi Bike Tableau Visualization (kept — still on the portfolio)
+- A "Several projects in progress" note that points back to the portfolio
 
-**Why:** both are from before your AI-eval career. They date the resume to your career-switch moment instead of your current trajectory.
+When one of the [[scaffolds]] ships, replace the placeholder line with the real entry.
 
-**TODO from you:**
-- Ship one of the [[scaffolds]] (negation-scope eval, IAA dashboard, Whisper teardown) and replace the placeholder line.
+## Still open from you
 
-## Portfolio reconciliation
+1. **Oasis API scale metric** (requests/day or P95 latency, whichever you can defend).
+2. **Oasis pipeline metrics** — replace the two `[N]` slots in the data-ingestion bullet.
+3. **Sanity check** the LinkedIn bullets 2 and 3 — I drafted them as plausible for an Engineering Linguist on Seeker Relevance. If they're wrong, rewrite.
 
-The portfolio (jonahrahn.github.io) still positions you as Engineering Linguist at LinkedIn in Santa Cruz. With the resume now reflecting two job changes since then, the portfolio needs updating to match:
+## Portfolio reconciliation (still pending)
 
-- Hero eyebrow → "AI evaluation engineer · New Haven, CT"
-- Hero sidebar NOW → Senior Product Development Specialist @ Persona Identities
-- About lede → reframed around eval engineering, linguistics as the lens
+The portfolio (jonahrahn.github.io) still positions you as Engineering Linguist at LinkedIn in Santa Cruz. The resume now reflects three jobs since then. Portfolio needs:
+
+- Hero eyebrow → "Backend engineer · New Haven, CT" (or whatever framing you want; the summary in resume.md is one option)
+- Hero sidebar NOW → Backend Engineer @ Oasis Health
+- About lede → reframed around the hybrid backend / LLM eval / linguistics positioning
 - About data table → updated company, role, focus, location
-- About proof-points → real numbers from the new resume (30% accuracy, [N] clients, etc.)
-- Contact section → New Haven
+- Footer location → New Haven
 - OG card → regenerate with new tagline
-- /now page → "Working on" should reflect Persona Identities
+- /now page → "Working on" reflects Oasis
 
-Open question: is the portfolio's "Engineering Linguist" framing still the brand you want, even though the title has changed? Or do you want to re-brand the whole site around "AI evaluation engineer"?
+Open question (still): is "Engineering Linguist" still the brand for the site, or do you want to re-brand around the current Backend Engineer / Eval Engineer hybrid?
