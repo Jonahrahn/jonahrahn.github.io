@@ -47,7 +47,7 @@ Backend engineer and AI evaluation specialist. Most recently built backend safet
 - Evaluated LLM outputs for safety, bias, hallucinations, and factual accuracy; ranked completions against gold standards.
 - Diagnosed pipeline breakdowns and quantified reviewer throughput and variance with Python and SQL.
 
-### Meta (via Magnit) · Data Labeling Analyst, Redteaming
+### Meta · Data Labeling Analyst, Redteaming
 **Nov 2023 to Dec 2023**
 
 - Performed adversarial testing on production LLMs and delivered detailed failure-mode reports that fed into model robustness work.
