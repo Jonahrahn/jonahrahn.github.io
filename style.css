@@ -487,25 +487,43 @@ button { font: inherit; cursor: pointer; }
 }
 .work-item__preview--embed:hover img { transform: none; }
 
-/* Tableau JS-API viz: forces the viz canvas to fill the container */
+/* Tableau preview: clickable image that opens the live dashboard */
 .work-item__preview--tableau {
-  aspect-ratio: 4 / 3;
+  position: relative;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  background-color: var(--paper-2);
-  background-image: url('images/projects/03-citi-bike.png');
-  background-size: cover;
-  background-position: center top;
+  display: block;
+  background: var(--paper-2);
 }
-.work-item__preview--tableau .tableauPlaceholder,
-.work-item__preview--tableau .tableauPlaceholder > * {
-  width: 100% !important;
-  height: 100% !important;
+.work-item__preview--tableau img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s ease;
 }
-.work-item__preview--tableau iframe { width: 100% !important; height: 100% !important; border: 0; }
-.work-item__preview--tableau noscript img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
+.work-item:hover .work-item__preview--tableau img { transform: scale(1.03); }
+.work-item__preview-overlay {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s, transform 0.2s, background 0.2s;
+  pointer-events: none;
 }
-.work-item:hover .work-item__preview--tableau img { transform: none; }
+.work-item__preview--tableau:hover .work-item__preview-overlay {
+  opacity: 1;
+  transform: translateY(0);
+  background: var(--accent);
+}
 
 .work-item__content {
   display: flex;
