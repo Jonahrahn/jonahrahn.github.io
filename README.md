@@ -24,7 +24,7 @@ This repository contains the source code for my personal portfolio website. It s
 
 ## Demo
 
-[Live Demo](https://your-portfolio-website-url.com)
+[Live Demo]([(https://jonahrahn.github.io/])
 
 ![Screenshot](screenshot.png)
 
@@ -33,7 +33,6 @@ This repository contains the source code for my personal portfolio website. It s
 - HTML
 - CSS
 - JavaScript
-- [Any additional technologies or frameworks used]
 
 ## Features
 
@@ -42,9 +41,4 @@ This repository contains the source code for my personal portfolio website. It s
 - Project cards with project descriptions and links.
 - Contact form for sending messages.
 
-## Getting Started
-
-These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
-
-1. Build the username.github.io repository:
 
