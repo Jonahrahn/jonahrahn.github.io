@@ -24,7 +24,7 @@ This repository contains the source code for my personal portfolio website. It s
 
 ## Demo
 
-([(https://jonahrahn.github.io/])
+(https://jonahrahn.github.io/)
 
 ## Technologies Used
 
