@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fafaf7">
+<title>Your eval's headline number is bounded by your rubric | Jonah Rahn</title>
+<meta name="description" content="Published evals report the reading and withhold the error bars. The bound is rubric reliability, it is cheap to measure, and almost nobody publishes it.">
+<style>
+  :root{
+    --bg:#fafaf7;
+    --ink:#1c1b18;
+    --muted:#6b6960;
+    --rule:#e2e0d8;
+    --accent:#8a5a2b;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    font-size:19px;
+    line-height:1.68;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:41rem;margin:0 auto;padding:4.5rem 1.5rem 6rem}
+  .back{
+    display:inline-block;
+    font-family:ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:.8rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    text-decoration:none;
+    margin-bottom:3rem;
+  }
+  .back:hover{color:var(--accent)}
+  h1{
+    font-size:2.15rem;
+    line-height:1.22;
+    letter-spacing:-.015em;
+    font-weight:600;
+    margin:0 0 1rem;
+  }
+  .byline{
+    font-family:ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:.82rem;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 2.75rem;
+    padding-bottom:2rem;
+    border-bottom:1px solid var(--rule);
+  }
+  h2{
+    font-family:ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:.86rem;
+    font-weight:650;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:3rem 0 .9rem;
+  }
+  p{margin:0 0 1.3rem}
+  .lede{font-size:1.06rem}
+  ol{padding-left:1.3rem;margin:0 0 1.3rem}
+  ol li{margin-bottom:.85rem;padding-left:.3rem}
+  strong{font-weight:640}
+  blockquote{
+    margin:2rem 0;
+    padding:.2rem 0 .2rem 1.4rem;
+    border-left:2px solid var(--accent);
+    font-size:1.05rem;
+  }
+  hr{border:0;border-top:1px solid var(--rule);margin:3.5rem 0 1.75rem}
+  footer{
+    font-family:ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:.84rem;
+    line-height:1.65;
+    color:var(--muted);
+  }
+  footer a{color:var(--muted)}
+  a{color:var(--accent)}
+  @media (max-width:640px){
+    body{font-size:18px}
+    .wrap{padding:3rem 1.25rem 4rem}
+    h1{font-size:1.75rem}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="/">&larr; Jonah Rahn</a>
+
+<h1>Your eval's headline number is bounded by your rubric, and almost nobody reports the bound</h1>
+<p class="byline">Jonah Rahn &middot; August 2026</p>
+
+<h2>The number</h2>
+
+<p class="lede">In April 2026 Anthropic published an update on its election safeguards. The centerpiece evaluation used 600 prompts, 300 harmful requests paired with 300 legitimate ones, and reported that Claude Opus 4.7 and Sonnet 4.6 responded appropriately 100% and 99.8% of the time. A separate influence operations evaluation reported 94% and 90%.</p>
+
+<p>The paired design is the right design. A refusal rate on its own tells you nothing, because a model that refuses everything scores perfectly. Pairing each harmful request with a legitimate one that resembles it forces the eval to measure discrimination rather than caution. That is more rigor than most published safety evals carry.</p>
+
+<p>What the update does not report is how "responded appropriately" was decided. It does not say who graded, how the rubric was constructed, or how often two graders looking at the same response agreed on the label. That omission is not unique to this post. It is close to universal across published evals. It is also the thing that bounds every number in it.</p>
+
+<h2>A grading rubric is a measurement instrument</h2>
+
+<p>Any eval whose outcome variable is a judgment call is running on an instrument, and instruments have precision. If two trained graders applying your rubric to the same response agree 85% of the time, your rubric cannot resolve differences smaller than roughly its own disagreement rate. A reported 99.8% is then not a claim about the model. It is a claim about the model as seen through an instrument with more noise in it than the effect being reported.</p>
+
+<blockquote>On 600 items, the distance between 100% and 99.8% is one response. If the rubric's own disagreement rate sits anywhere above a fraction of a percent, that one-item gap between two models is not a finding. It is inside the instrument's error.</blockquote>
+
+<p>This is not a hypothetical failure mode. It is the default state of any labeling process nobody has measured.</p>
+
+<h2>The saturated number is the least informative one</h2>
+
+<p>Compare the two results in the post. The 600-prompt policy eval returns 100% and 99.8%. The influence operations eval returns 94% and 90%.</p>
+
+<p>The second pair is more useful, and not because the models did worse. It is more useful because it still discriminates. A metric pinned at the ceiling has stopped separating the thing you are measuring from the thing you are measuring it with. Once a rate saturates, further movement in it is mostly rubric movement, and the eval's job quietly shifts from measuring the model to measuring your definitions.</p>
+
+<p>The right response to a saturated eval is not to celebrate it. It is to read it as a signal that the prompt set has been outgrown and the binding constraint has moved to the rubric.</p>
+
+<h2>Where the ambiguity actually lives</h2>
+
+<p>In a paired harmful and benign design, disagreement is not spread evenly. It concentrates almost entirely on the benign half.</p>
+
+<p>The 300 harmful prompts are mostly easy to label. A request to fabricate vote-counting claims is a clear positive and graders converge on it. The 300 legitimate prompts are where the trouble is, because "legitimate request that superficially resembles a harmful one" is the definition of a boundary case. A journalist asking how a specific disinformation narrative spread. A campaign staffer asking about opposition messaging. A researcher asking the model to reproduce a false claim in order to analyze it.</p>
+
+<p>Those are the items where trained graders split. They are also the items that decide the over-refusal number, which is the number the whole paired design exists to produce. So the most rubric-sensitive measurement in the report is the one carrying the most weight, and its reliability goes unreported.</p>
+
+<h2>What actually moved the number</h2>
+
+<p>I worked on reviewer operations at Scale AI while an evaluation program grew from roughly 40 reviewers to roughly 400. Precision improved about 30% over that stretch. Almost none of that came from hiring better reviewers or from writing longer guidelines.</p>
+
+<p>It came from treating disagreement as the primary signal rather than as noise to be trained out.</p>
+
+<p>The loop was mechanical. Double-grade a sample of every batch. Do not average the two labels. Pull every item where they split and read it. Disagreements cluster, and the clusters are almost always specific decision boundaries rather than careless reviewers. Rewrite the rubric at those exact boundaries, and rewrite them with worked examples rather than definitions, because a definition invites interpretation and a labeled example forecloses it. Then re-measure agreement before trusting any downstream metric.</p>
+
+<p>The reason this works is that reviewer error is far less often carelessness than it is a rubric that never decided the case. When a guideline is silent on a boundary, every reviewer resolves it privately and consistently, which produces confident, reproducible, mutually incompatible labels. That looks like a people problem in the dashboard. It is a specification problem.</p>
+
+<h2>Three cheap things worth publishing</h2>
+
+<p>None of this requires more prompts or more compute.</p>
+
+<ol>
+<li><strong>An agreement statistic on a double-graded subsample.</strong> Even a few dozen items gives a usable bound, and it converts a headline number from a point estimate into an interval.</li>
+<li><strong>A disagreement taxonomy.</strong> Which categories generated the splits. This is often more informative to a reader than the pass rate, because it shows where the policy itself is underspecified.</li>
+<li><strong>A rubric version reported alongside the score.</strong> A score without a rubric version is not reproducible, and it is not comparable across model releases, because the rubric almost certainly changed between them.</li>
+</ol>
+
+<h2>What I am not saying</h2>
+
+<p>I am not saying the election safeguards result is wrong. Publishing a paired 600-prompt design openly is more than most labs do, and the influence operations numbers are reported with room in them rather than rounded up to a comfortable ceiling.</p>
+
+<p>The argument is narrower. The marginal unit of credibility in published evals no longer comes from adding prompts. It comes from publishing the reliability of the instrument doing the grading. Right now the field reports the reading and withholds the error bars, and the error bars are knowable, cheap, and under our control.</p>
+
+<hr>
+
+<footer>
+<p>Jonah Rahn works on AI evaluation, reviewer operations, and model quality.<br>
+<a href="mailto:jonah.rahn@gmail.com">jonah.rahn@gmail.com</a> &middot; <a href="https://github.com/Jonahrahn">github.com/Jonahrahn</a> &middot; <a href="https://www.linkedin.com/in/jonah-rahn">linkedin.com/in/jonah-rahn</a></p>
+<p>Source: Anthropic, "An update on our election safeguards," April 2026. <a href="https://www.anthropic.com/news/election-safeguards-update">anthropic.com/news/election-safeguards-update</a></p>
+</footer>
+
+</div>
+</body>
+</html>
