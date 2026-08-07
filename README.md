@@ -1,42 +1,30 @@
 # jonahrahn.github.io
-Portfolio display
 
-# Project Name
-
-Portfolio Website
-
-## Description
-
-This repository contains the source code for my personal portfolio website. It serves as a showcase of my skills, projects, and experiences as an Engineering Linguist and Data Scientist. The website is designed to provide visitors with an overview of my background, skills, and the projects I've worked on.
-
-## Table of Contents
-
-- [Project Name](#project-name)
-  - [Description](#description)
-  - [Table of Contents](#table-of-contents)
-  - [Demo](#demo)
-  - [Technologies Used](#technologies-used)
-  - [Features](#features)
-  - [Getting Started](#getting-started)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [License](#license)
+Personal portfolio for [Jonah Rahn](https://jonahrahn.github.io) — backend engineer and AI evaluation specialist based in Orange County, CA.
 
 ## Demo
 
-(https://jonahrahn.github.io/)
+https://jonahrahn.github.io/
 
-## Technologies Used
+## Stack
 
 - HTML
 - CSS
 - JavaScript
 
-## Features
+## Local preview
 
-- Responsive design for various screen sizes.
-- Sections for displaying personal information, skills, projects, and contact details.
-- Project cards with project descriptions and links.
-- Contact form for sending messages.
+Serve the repo root with any static server, for example:
 
+```bash
+python3 -m http.server 8080
+```
 
+Then open http://localhost:8080.
+
+## Notes
+
+- Case study pages live in `work/`
+- `/now` is a current-focus page (`now.html`)
+- `PROFILE_README.md` is a draft for the GitHub profile README (`Jonahrahn/Jonahrahn`)
+- `portfolio/resume/` holds resume source; `resume.pdf` is the download linked from the site

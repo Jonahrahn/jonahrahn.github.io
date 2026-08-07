@@ -7,9 +7,9 @@
 
 ## Jonah Rahn
 
-**Engineering Linguist** · Santa Cruz, CA.
+**Backend engineer & AI evaluation** · Orange County, CA.
 Bridging human language and machine intelligence.
-B.A. Linguistics, UC Santa Cruz · ML model optimization @ LinkedIn.
+B.A. Linguistics, UC Santa Cruz · most recently Backend Engineer @ Oasis Health.
 
 [Portfolio →](https://jonahrahn.github.io) · [LinkedIn →](https://www.linkedin.com/in/jonah-rahn/) · [Upwork →](https://www.upwork.com/freelancers/~0182af44d0369b6f1e/)
 
@@ -17,9 +17,9 @@ B.A. Linguistics, UC Santa Cruz · ML model optimization @ LinkedIn.
 
 ### What I work on
 
-- **Data & Analysis** · Python, SQL, R, JavaScript, AWS, Spark, Tableau
-- **Computational Linguistics** · Syntax, semantics, phonetics (Praat), annotation
-- **Machine Learning** · TensorFlow, Keras, PyTorch, NLP, deep & reinforcement learning
+- **Backend systems** · Python, SQL, APIs, data pipelines, production hardening
+- **AI evaluation** · Annotation design, failure-mode taxonomies, adversarial testing
+- **Computational linguistics** · Syntax, semantics, NLP, LLM evaluation
 
 ---
 
@@ -36,4 +36,4 @@ B.A. Linguistics, UC Santa Cruz · ML model optimization @ LinkedIn.
 
 ---
 
-<sub>© Jonah Rahn · Santa Cruz, California</sub>
+<sub>© Jonah Rahn · Orange County, California</sub>

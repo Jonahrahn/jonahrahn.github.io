@@ -8,7 +8,7 @@ tags: [resume, career, portfolio]
 # Jonah Rahn
 
 [LinkedIn](https://www.linkedin.com/in/jonah-rahn/) · [Portfolio](https://jonahrahn.github.io)
-(714) 795-4872 · jonah.rahn@gmail.com · New Haven, CT
+(714) 795-4872 · jonah.rahn@gmail.com · Orange County, CA
 
 ---
 
